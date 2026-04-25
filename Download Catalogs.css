@@ -2,4 +2,37 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color: ;
+    color: ;
+    padding: ;
+    text-align: center;
+    font-size: 22px;
+}
+
+div {
+    width: 100%;
+    width: 1240px;
+    height: 460px;
+    margin: auto;
+    border-radius: 40px;
+    background-color: rgba(250, 249, 249, 0);
+    display: flex;
+}
+
+.img_1 {
+    width: 100%;
+    width: 620px;
+    height: 460px;
+    border-radius: 40px 0 0 40px;
+}
+
+.img_2 {
+    width: 100%;
+    width: 620px;
+    height: 460px;
+    border-radius: 0 40px 40px 0;
 }
