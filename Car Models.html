@@ -1,10 +1,66 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF_8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
-    </head>
-    <body>
 
-    </body>
+<head>
+    <meta charset="UTF_8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Download Catalogs.css">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div id="menu-icon" class="menu-btn" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="neme">FUÊRZÁ</div>
+        <div class="icone">🌐</div>
+    </header>
+    <div id="sidebar" class="sidebar">
+        <ul class="sidebar-links">
+            <li><a href="Index.html"><span>Home</span><span class="arrow">></span></a></li>
+            <li><a href="Car Models.html"><span>Car Models</span><span class="arrow">></span></a></li>
+            <li><a href="Compare Cars.html"><span>Compare Cars</span><span class="arrow">></span></a></li>
+            <li><a href="Book A Test Driver.html"><span>Book A Test Driver</span><span class="arrow">></span></a></li>
+            <li><a href="Find A Dealer.html"><span>Find A Dealer</span><span class="arrow">></span></a></li>
+            <li><a href="About Us.html"><span>About Us</span><span class="arrow">></span></a></li>
+            <li><a href="Contact Us.html"><span>Contact Us</span><span class="arrow">></span></a></li>
+        </ul>
+    </div>
+    <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+    <section>
+
+        <div class="car1">
+            <video autoplay muted loop poster="Assets/Images/porsche 911.jpg" class="back1">
+                <source src="Assets/Videos/porsche 911.mp4" type="video/mp4">
+                your browser doesn't support HTML5 video.
+            </video>
+            <div class="content">
+                <div class="model">
+                    911.
+                </div>
+                <a href="" Download class="download-btn"> Download Catalog</a>
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            const menuIcon = document.getElementById('menu-icon');
+
+            // تبديل الكلاسات
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('show');
+            menuIcon.classList.toggle('open');
+        }
+
+    </script>
+
+</body>
+
 </html>
