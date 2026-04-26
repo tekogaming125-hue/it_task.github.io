@@ -120,7 +120,7 @@ header {
 
 .arrow {
     font-size: 1.2rem;
-    color: #999;
+    color: black;
     font-weight: 300;
 }
 
@@ -150,7 +150,7 @@ header {
 
 .menu-btn.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-    background-color: black;
+    background-color: #828891;
     /* تغيير اللون لأسود عشان يبان فوق المنيو البيضاء */
 }
 
@@ -160,7 +160,7 @@ header {
 
 .menu-btn.open span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
-    background-color: black;
+    background-color: #828891;
 }
 
 .card {
