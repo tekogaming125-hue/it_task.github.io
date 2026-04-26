@@ -50,6 +50,7 @@ header {
 
 .logo {
     width: 50px;
+    z-index: 9999;
 }
 
 /* ================= MENU ================= */
@@ -112,7 +113,7 @@ header {
 .sidebar-links li a {
     display: flex;
     justify-content: space-between;
-    padding: 10px 25px;
+    padding: 12px 25px;
     text-decoration: none;
     border-bottom: solid 2px #ffffff82;
     color: #000;

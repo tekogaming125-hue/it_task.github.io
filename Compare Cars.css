@@ -178,6 +178,7 @@ table {
      overflow: hidden;
      border-radius: 10px;
      width: 100%;
+<<<<<<< HEAD
     margin: 50px auto;
     background-color: rgba(0, 0, 0, 0);
     color: white;
@@ -187,6 +188,14 @@ table {
     margin-top: 100px;
 
 
+=======
+    margin: 80px auto;
+    background-image: url(Assets/Images/WhatsApp\ Image\ 2026-04-26\ at\ 8.04.17\ PM.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+>>>>>>> 7017b7eea708228cc872f6eb2f5f9567c0392e46
 
 }
 
