@@ -5,9 +5,29 @@
     box-sizing: border-box;
 }
 
+/* themes */
+:root {
+    --bg-color: #828891;
+    --text-color: #000;
+    --card-overlay: rgba(0,0,0,0.5);
+    --sidebar-bg: #b1b7bee3;
+    --sidebar-text: #000;
+    --hover-bg: rgb(207, 201, 201);
+}
+
+.dark {
+    --bg-color: #000000;
+    --text-color: #ff0000d4;
+    --sidebar-bg: #1f1f1fe3;
+    --sidebar-text: #ff0000d4;
+    --hover-bg: #333;
+}
+
 body {
-    background-color: #828891;
+    background-color: var(--bg-color);
     font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    transition: 0.3s;
 }
 
 /* ================= HEADER ================= */
@@ -33,14 +53,21 @@ header {
 .icon {
     display: flex;
     justify-content: flex-end;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 5px;
+    color: inherit;
 }
 
 .name {
+    color: var(--text-color);
     flex: 2;
     text-align: center;
     font-size: 28px;
     letter-spacing: 3px;
-    color: #000;
+    /* color: #000; */
     font-family: 'Michroma', sans-serif;
     display: flex;
     justify-content: center;
@@ -64,7 +91,8 @@ header {
     display: block;
     width: 26px;
     height: 2px;
-    background-color: #000;
+    background-color: var(--text-color);
+    /* background-color: #000; */
     margin: 5px 0;
     transition: 0.3s;
 }
@@ -87,12 +115,13 @@ header {
 
 /* ================= SIDEBAR ================= */
 .sidebar {
+    background-color: var(--sidebar-bg);
     position: fixed;
     top: 0;
     left: -100%;
     width: 320px;
     height: 100%;
-    background-color: #b1b7bee3;
+    /* background-color: #b1b7bee3; */
     z-index: 1001;
     transition: 0.4s;
     padding-top: 50px;
@@ -111,18 +140,20 @@ header {
 }
 
 .sidebar-links li a {
+    color: var(--sidebar-text);
     display: flex;
     justify-content: space-between;
     padding: 12px 25px;
     text-decoration: none;
     border-bottom: solid 2px #ffffff82;
-    color: #000;
+    /* color: #000; */
     font-family: 'Michroma', sans-serif;
     font-size: 0.9rem;
 }
 
 .sidebar-links li a:hover {
-    background-color: rgb(207, 201, 201);
+    background-color: var(--hover-bg);
+    /* background-color: rgb(207, 201, 201); */
     border-radius: 3px;
 }
 

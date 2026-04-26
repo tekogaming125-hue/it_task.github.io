@@ -18,6 +18,15 @@
         <link rel="stylesheet" href="Download Catalogs.css">
         <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
         <title>Download Catalogs</title>
+
+        <script>
+            (function () {
+                if (localStorage.getItem("theme") === "dark") {
+                    document.documentElement.classList.add("dark");
+                }
+            });
+        </script>
+        
     </head>
 
     <body>
@@ -31,7 +40,7 @@
 
             <div class="name"><img src="Assets\Images\FUERZA_logo-removebg-preview.png" alt="" class="logo"> FUÊRZÁ</div>
 
-            <div class="icon">🌐</div>
+            <button class="icon" id="themeBtn">☀️</button>
 
         </header>
 
@@ -245,6 +254,37 @@
         </section>
 
         <footer></footer>
+
+        <script>
+                let btn = document.getElementById("themeBtn");
+
+                // تحميل الثيم المحفوظ
+                if (localStorage.getItem("theme") === "dark") {
+                    document.documentElement.classList.add("dark");
+                }
+
+                // تحديث الأيقونة
+                function updateIcon() {
+                    btn.textContent = document.documentElement.classList.contains("dark") 
+                        ? "🌑" 
+                        : "☀️";
+                }
+
+                updateIcon();
+
+                // تغيير الثيم
+                btn.addEventListener("click", function () {
+                    document.documentElement.classList.toggle("dark");
+
+                    if (document.documentElement.classList.contains("dark")) {
+                        localStorage.setItem("theme", "dark");
+                    } else {
+                        localStorage.setItem("theme", "light");
+                    }
+
+                    updateIcon();
+                });
+        </script>
 
     </body>
 </html>
