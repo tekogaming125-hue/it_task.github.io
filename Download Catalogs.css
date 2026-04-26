@@ -1,230 +1,185 @@
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
     background-color: #828891;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* ================= HEADER ================= */
 header {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    margin-top: -10px;
+    margin-bottom: -6px;
     display: flex;
-    margin-top: -40px;
     justify-content: space-between;
-    /* بيوزع العناصر: واحد شمال، واحد نص، واحد يمين */
     align-items: center;
-    padding: 20px 30px;
-    /* مسافة داخلية من الجوانب */
-    z-index: 1000;
-    background: transparent;
+    padding: 0 30px;
+    z-index: 900;
 }
 
-/* عشان نضمن إن اللوجو يفضل في النص بالظبط حتى لو العناصر اللي جنبه أحجامها مختلفة */
+/* توزيع */
 .menu-btn,
 .icon {
     flex: 1;
-    /* بيخلي الجانب اليمين والشمال واخدين نفس المساحة */
 }
 
 .icon {
     display: flex;
     justify-content: flex-end;
-    /* بيحدف الأيقونة لآخر اليمين */
 }
 
 .name {
     flex: 2;
-    /* بيدي مساحة أكبر للوجو في النص */
     text-align: center;
-    font-size: 30px;
-    font-weight: 450;
+    font-size: 28px;
     letter-spacing: 3px;
-    color: #000000;
+    color: #000;
     font-family: 'Michroma', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* مسافة بين اللوجو والكلمة */
+    gap: 5px;
 }
 
 .logo {
-    width: 60px;
-    height: auto;
+    width: 50px;
 }
 
+/* ================= MENU ================= */
 .menu-btn {
     cursor: pointer;
+    position: relative;
+    z-index: 1100;
 }
 
 .menu-btn span {
     display: block;
-    width: 28px;
-    height: 3px;
-    background-color: #000000;
-    margin: 5px 3px;
+    width: 26px;
+    height: 2px;
+    background-color: #000;
+    margin: 5px 0;
     transition: 0.3s;
 }
 
-/* --- السايد بار --- */
+.menu-btn.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background-color: #b1b7bee3;
+}
+
+.menu-btn.open span:nth-child(2) {
+    opacity: 0;
+    background-color: #b1b7bee3;
+}
+
+.menu-btn.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+    background-color: #b1b7bee3;
+}
+
+
+/* ================= SIDEBAR ================= */
 .sidebar {
     position: fixed;
     top: 0;
     left: -100%;
-    /* مخفي جهة الشمال */
-    width: 350px;
+    width: 320px;
     height: 100%;
-    background-color: #ffffff8a;
-    z-index: 1000;
-    transition: 0.4s ease;
-    padding: 45px 0 40px 0;
+    background-color: #b1b7bee3;
+    z-index: 1001;
+    transition: 0.4s;
+    padding-top: 50px;
 }
 
 .sidebar.active {
     left: 0;
-    /* يظهر لما نضيف كلاس active */
 }
 
 .sidebar-links {
     list-style: none;
-    width: 100%;
 }
 
 .sidebar-links li {
-    width: 100%;
-    border-bottom: 2px solid #e0e0e0;
+    border-bottom: 2px solid #19121200;
 }
 
 .sidebar-links li a {
     display: flex;
     justify-content: space-between;
-    /*بيخلي الكلام ف ناحية و السهم ف ناحية*/
-    align-items: center;
-    padding: 15px 40px;
+    padding: 10px 25px;
     text-decoration: none;
-    color: #000000;
-    font-size: 1.1rem;
+    border-bottom: solid 2px #ffffff82;
+    color: #000;
     font-family: 'Michroma', sans-serif;
-    text-transform: uppercase;
-    transition: 0.3s;
+    font-size: 0.9rem;
 }
 
 .sidebar-links li a:hover {
-    background-color: #ebebeb;
+    background-color: rgb(207, 201, 201);
+    border-radius: 3px;
 }
 
-.arrow {
-    font-size: 1.2rem;
-    color: black;
-    font-weight: 300;
-}
-
-/* --- البلور لما افتح السايد بار لباقي الصفحه(Overlay) --- */
+/* ================= OVERLAY ================= */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0,0,0,0.5);
     display: none;
-    z-index: 500;
+    z-index: 1000;
 }
 
 .overlay.show {
     display: block;
 }
 
-/* --- حركة الـ 3 شرط لـ X --- */
-.menu-btn {
-    position: relative;
-    z-index: 1100;
-    /* عشان تفضل فوق السايد بار */
-    cursor: pointer;
-}
-
-.menu-btn.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-    background-color: #828891;
-    /* تغيير اللون لأسود عشان يبان فوق المنيو البيضاء */
-}
-
-.menu-btn.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-btn.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
-    background-color: #828891;
-}
-
-.card {
-    width: 100%;
-    width: 1400px;
-    height: 980px;
-    margin: auto;
-    margin-top: 100px;
-    margin-bottom: 50px;
-    border-radius: 40px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.gallery {
-    width: 100%;
-    width: 1400px;
-    height: 450px;
-    margin: auto;
-    border-radius: 40px;
+/* ================= CARDS ================= */
+.cards-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding-bottom: 50px;
 }
 
-.content {
-    /* text-align: center; */
-    width: 100%;
-    width: 1400px;
-    height: 980px;
-    position: relative;
-    overflow: hidden;
-    background-color: rgba(10, 50, 89, 0);
+/* الكارت */
+.card {
+    width: 95%;
+    max-width: 1100px;
     margin: auto;
-    border-radius: 0 0 40px 40px;
+    border-radius: 50px;
+    overflow: hidden;
+    background: #ffffff00;
 }
 
-.carrera {
-    padding-top: 10px;
-    text-align: center;
-    font-size: 30px;
+/* الصور */
+.gallery {
+    display: flex;
+    height: 400px;
 }
 
-ul {
-    margin: 0;
-    padding: 25px;
-    /* list-style: none; */
-    list-style-position: inside;
-    font-size: 30px;
+.gallery img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.img_1 {
-    width: 100%;
-    width: 700px;
-    height: 450px;
-    border-radius: 40px 0 0 0;
+/* المحتوى */
+.content {
+    position: relative;
+    height: 380px;
+    overflow: hidden;
 }
 
-.img_2 {
-    width: 100%;
-    width: 700px;
-    height: 450px;
-    border-radius: 0 40px 0 0;
-}
-
+/* الفيديو */
 .vcarrera {
     position: absolute;
     width: 100%;
@@ -233,33 +188,65 @@ ul {
     z-index: 0;
 }
 
+
+/* النص */
 .convideo {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     color: white;
+    padding: 30px;
 }
 
+.model {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+ul {
+    padding: 20px;
+    font-size: 18px;
+}
+
+/* الزرار */
 .button {
-    margin-top: -135px;
-    margin-left: 1060px;
-    padding: 10px 20px;
-    background: transparent;
-    cursor: pointer;
-    /* border-radius: 10px; */
-    padding: 12px 35px;
+    position: absolute;
+    bottom: 100px;
+    right: 75px;
+    z-index: 3;
+    padding: 10px 25px;
     border: 2px solid white;
     color: white;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.3s ease;
-    position: absolute;
-
 }
 
-.button:hover {
-    background: rgba(255, 255, 255, .2);
-    color: white;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, .5);
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    .gallery {
+        flex-direction: column;
+        height: 250px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 50%;
+    }
+
+    .content {
+        height: 500px;
+    }
+
+    .model {
+        font-size: 18px;
+    }
+
+    ul {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
 }
