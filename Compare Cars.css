@@ -200,7 +200,7 @@ thead {
 table th,table td {
     padding: 15px;
     text-align: center;
-    border: 1px solid #D2B48C;
+    border: 1.5px solid #DEB887;
     border-collapse: collapse;
     backdrop-filter: blur(3px);
     font-size: blod;
