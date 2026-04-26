@@ -4,12 +4,7 @@
     box-sizing: border-box;
 
 }
-body {
-    
-    text-align: center;
-    background-color: #828891;
 
-}
    
 header {
     position: absolute;
@@ -164,16 +159,13 @@ header {
     transform: rotate(-45deg) translate(7px, -7px);
     background-color: #828891;
 }
- 
-h2{
-    font-weight: bold;
+
+body {
+    
     text-align: center;
-    padding: 40px 0 25px;
-    color: #000000;
+    background-color: #828891;
 
 }
-
-
 
 table {
     color: black;
