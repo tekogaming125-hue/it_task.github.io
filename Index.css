@@ -4,9 +4,21 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+:root {
+    --bg-color: #828891;
+    --text-color: #000;
+    --card-overlay: rgba(0,0,0,0.5);
+    --sidebar-bg: #b1b7bee3;
+    --sidebar-text: #000;
+    --hover-bg: rgb(207, 201, 201);
+}
 
 body {
     background-color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -71,52 +83,83 @@ header {
     transition: 0.3s;
 }
 
+
+
+.car-btn {
+    position: absolute;
+    bottom: 60px;
+    right: 5%;
+
+    padding: 14px 28px;
+    
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    
+    color: white;
+    text-decoration: none;
+    font-family: 'Michroma', sans-serif;
+    letter-spacing: 2px;
+    font-size: 0.95rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    
+    transition: 0.4s ease;
+    z-index: 9999;
+}
+
+.car-btn:hover {
+    background: white;
+    color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
 /* --- السايد بار --- */
 .sidebar {
+    background-color: var(--sidebar-bg);
     position: fixed;
     top: 0;
     left: -100%;
-    /* مخفي جهة الشمال */
-    width: 350px;
+    width: 320px;
     height: 100%;
-    background-color: #ffffff8a;
-    z-index: 1000;
-    transition: 0.4s ease;
-    padding: 45px 0 40px 0;
+    /* background-color: #b1b7bee3; */
+    z-index: 1001;
+    transition: 0.4s;
+    padding-top: 100px;
 }
 
 .sidebar.active {
     left: 0;
-    /* يظهر لما نضيف كلاس active */
 }
 
 .sidebar-links {
     list-style: none;
-    width: 100%;
 }
 
 .sidebar-links li {
-    width: 100%;
-    border-bottom: 2px solid #e0e0e0;
+    border-bottom: 2px solid #19121200;
 }
 
 .sidebar-links li a {
+    color: var(--sidebar-text);
     display: flex;
     justify-content: space-between;
-    /*بيخلي الكلام ف ناحية و السهم ف ناحية*/
-    align-items: center;
-    padding: 15px 40px;
+    padding: 18px 25px;
     text-decoration: none;
-    color: #000000;
-    font-size: 1.1rem;
+    border-bottom: solid 2px #ffffff82;
+    /* color: #000; */
     font-family: 'Michroma', sans-serif;
-    text-transform: uppercase;
+    font-size: 1.3rem;
     transition: 0.3s;
 }
 
 .sidebar-links li a:hover {
-    background-color: #ebebeb;
+    background-color: var(--hover-bg);
+    /* background-color: rgb(207, 201, 201); */
+    border-radius: 3px;
+    transform: translateX(8px);
 }
+
+
 
 .arrow {
     font-size: 1.2rem;
@@ -132,7 +175,7 @@ header {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    display: none;
+    display: none !important;
     z-index: 500;
 }
 
@@ -163,22 +206,121 @@ header {
     background-color: black;
 }
 
+
+
+
 .video-background {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
-    z-index: -1;
+    z-index: 1;
 }
 
 .video-background iframe {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100vw;
+    width: 177.77vh;
     height: 100vh;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
+    transform:translate(-50%,-50%);
+    pointer-events: none !important;
+}
+
+.video-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+}
+
+
+
+.footer {
+    background: #0a0a0a;
+    color: #fff;
+    padding: 70px 40px 20px;
+    margin-top: auto;
+}
+
+/* layout */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* columns */
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* logo */
+.footer-logo {
+    font-size: 26px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+/* titles */
+.footer-col h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    position: relative;
+}
+
+/* underline animation */
+.footer-col h3::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s;
+}
+
+.footer-col:hover h3::after {
+    width: 40px;
+}
+
+/* links */
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin: 8px 0;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #aaa;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* hover line effect */
+.footer-col ul li a::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+}
+
+.footer-col ul li a:hover::after {
+    width: 100%;
 }
