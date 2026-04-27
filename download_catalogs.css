@@ -67,7 +67,6 @@ header {
     text-align: center;
     font-size: 28px;
     letter-spacing: 3px;
-    /* color: #000; */
     font-family: 'Michroma', sans-serif;
     display: flex;
     justify-content: center;
@@ -92,7 +91,6 @@ header {
     width: 26px;
     height: 2px;
     background-color: var(--text-color);
-    /* background-color: #000; */
     margin: 5px 0;
     transition: 0.3s;
 }
@@ -121,7 +119,6 @@ header {
     left: -100%;
     width: 320px;
     height: 100%;
-    /* background-color: #b1b7bee3; */
     z-index: 1001;
     transition: 0.4s;
     padding-top: 50px;
@@ -146,14 +143,14 @@ header {
     padding: 12px 25px;
     text-decoration: none;
     border-bottom: solid 2px #ffffff82;
-    /* color: #000; */
     font-family: 'Michroma', sans-serif;
     font-size: 0.9rem;
+    transition: 0.1s ease;
 }
 
 .sidebar-links li a:hover {
+    transform: translateY(1px);
     background-color: var(--hover-bg);
-    /* background-color: rgb(207, 201, 201); */
     border-radius: 3px;
 }
 
