@@ -16,12 +16,14 @@ header {
     left: 0;
     width: 100%;
     display: flex;
+    margin-top: -10px;
+    margin-bottom: -6px;
     justify-content: space-between;
     /* بيوزع العناصر: واحد شمال، واحد نص، واحد يمين */
     align-items: center;
     padding: 0px 30px;
     /* مسافة داخلية من الجوانب */
-    z-index: 900;
+    z-index: 9000;
     background: transparent;
 }
 
@@ -35,112 +37,50 @@ header {
 .icon {
     display: flex;
     justify-content: flex-end;
+    background: none;
+    border: none;
     /* بيحدف الأيقونة لآخر اليمين */
+    font-size: 22px;
+    cursor: pointer;
+    padding: 5px;
+    color: inherit;
 }
 
 .name {
     flex: 2;
     /* بيدي مساحة أكبر للوجو في النص */
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 28px;
     letter-spacing: 3px;
     color: white;
     font-family: 'Michroma', sans-serif;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    display: flex;
+}
 
+.logo {
+    width: 50px;
 }
 
 
+/* --- حركة الـ 3 شرط لـ X --- */
 .menu-btn {
+    position: relative;
+    z-index: 900;
+    /* عشان تفضل فوق السايد بار */
     cursor: pointer;
 }
 
 .menu-btn span {
     display: block;
-    width: 25px;
+    width: 26px;
     height: 2px;
     background-color: white;
     margin: 5px 0;
     transition: 0.3s;
-}
 
-/* --- السايد بار --- */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    /* مخفي جهة الشمال */
-    width: 350px;
-    height: 100%;
-    background-color: #f8f8f8;
-    z-index: 1000;
-    transition: 0.4s ease;
-    padding: 100px 0 40px 0;
-}
-
-.sidebar.active {
-    left: 0;
-    /* يظهر لما نضيف كلاس active */
-}
-
-.sidebar-links {
-    list-style: none;
-    width: 100%;
-}
-
-.sidebar-links li {
-    width: 100%;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.sidebar-links li a {
-    display: flex;
-    justify-content: space-between;
-    /*بيخلي الكلام ف ناحية و السهم ف ناحية*/
-    align-items: center;
-    padding: 25px 40px;
-    text-decoration: none;
-    color: #191919;
-    font-size: 1.1rem;
-    font-family: 'Michroma', sans-serif;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
-
-.sidebar-links li a:hover {
-    background-color: #ebebeb;
-}
-
-.arrow {
-    font-size: 1.2rem;
-    color: #999;
-    font-weight: 300;
-}
-
-/* --- البلور لما افتح السايد بار لباقي الصفحه(Overlay) --- */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: none;
-    z-index: 500;
-    transition: opacity 0.4s ease;
-}
-
-.overlay.show {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* --- حركة الـ 3 شرط لـ X --- */
-.menu-btn {
-    position: relative;
-    z-index: 1100;
-    /* عشان تفضل فوق السايد بار */
-    cursor: pointer;
 }
 
 .menu-btn.open span:nth-child(1) {
@@ -151,12 +91,81 @@ header {
 
 .menu-btn.open span:nth-child(2) {
     opacity: 0;
+    background-color: black;
 }
 
 .menu-btn.open span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
     background-color: black;
 }
+
+
+
+/* --- السايد بار --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    /* مخفي جهة الشمال */
+    width: 320px;
+    height: 100%;
+    z-index: 1001;
+    transition: 0.4s ease;
+    padding-top: 70px ;
+    background-color: #b1b7bee3;
+}
+
+.sidebar.active {
+    left: 0;
+    /* يظهر لما نضيف كلاس active */
+}
+
+.sidebar-links {
+    list-style: none;
+}
+
+.sidebar-links li {
+    border-bottom: 2px solid #19121200;
+}
+
+.sidebar-links li a {
+    display: flex;
+    justify-content: space-between;
+    /*بيخلي الكلام ف ناحية و السهم ف ناحية*/
+    padding: 12px 25px;
+    text-decoration: none;
+    border-bottom: solid 2px #ffffff82;
+    color: #191919;
+    font-size: 0.9rem;
+    font-family: 'Michroma', sans-serif;
+    transition: 0.1s ease;
+}
+
+.sidebar-links li a:hover {
+    transform: translateY(1px);
+    background-color: rgb(207, 201, 201);
+    border-radius: 3px;
+}
+
+
+/* --- البلور لما افتح السايد بار لباقي الصفحه(Overlay) --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+    transition: opacity 0.4s ease;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 
 .car1 {
     width: 100%;
