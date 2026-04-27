@@ -19,7 +19,7 @@
             <img src="Assets\Images\FUERZA_logo-removebg-preview.png" alt="" class="logo">
             FUÊRZÁ
         </div>
-        <button class="icon" id="themeBtn">🌑</button>
+        <button class="icon" id="mode-toggle">🌑</button><audio id="theme-sound" src="Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3"></audio>
     </header>
     <div id="sidebar" class="sidebar">
         <ul class="sidebar-links">
@@ -218,6 +218,31 @@
             video.pause();
             video.currentTime = 0; // يرجع لأول الفيديو لما تبعد الماوس
         }
+const toggleBtn = document.getElementById('mode-toggle');
+const body = document.body;
+
+// 1. تعريف ملف الصوت (تأكد إن المسار واسم الملف صح عندك)
+const toggleSound = new Audio('Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3');
+
+// التأكد من اختيار المستخدم السابق عند تحميل الصفحة
+if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-mode');
+}
+
+toggleBtn.addEventListener('click', () => {
+    // 2. تشغيل الصوت فوراً عند الضغط
+    toggleSound.currentTime = 0; // يصفر الصوت عشان يلحق يشتغل مع الضغطات السريعة
+    toggleSound.play();
+
+    body.classList.toggle('light-mode');
+
+    // حفظ الاختيار
+    if (body.classList.contains('light-mode')) {
+        localStorage.setItem('theme', 'light');
+    } else {
+        localStorage.setItem('theme', 'dark');
+    }
+});
 
     </script>
 
