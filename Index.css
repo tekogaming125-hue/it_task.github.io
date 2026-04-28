@@ -6,15 +6,23 @@
 }
 :root {
     --bg-color: #828891;
-    --text-color: #000;
+    --text-color:#fff; ;
     --card-overlay: rgba(0,0,0,0.5);
-    --sidebar-bg: #b1b7bee3;
+    --sidebar-bg: #1c1c1cef;
+    --sidebar-text: #fff;
+    --hover-bg: rgba(255,255,255,0.08);
+}
+
+body.light-mode {
+    --bg-color: white;
+    --text-color: black;
+    --sidebar-bg: #1c1c1cef;
     --sidebar-text: #000;
     --hover-bg: rgb(207, 201, 201);
 }
 
 body {
-    background-color: black;
+    background-color: var(--bg-color);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -22,6 +30,7 @@ body {
 }
 
 header {
+    color: white;
     position: absolute;
     top: 0;
     left: 0;
@@ -31,11 +40,12 @@ header {
     justify-content: space-between;
     /* بيوزع العناصر: واحد شمال، واحد نص، واحد يمين */
     align-items: center;
-    padding: 20px 30px;
+    padding: 15px 30px;
     /* مسافة داخلية من الجوانب */
     z-index: 1000;
-    background: transparent;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
 }
+
 
 /* عشان نضمن إن اللوجو يفضل في النص بالظبط حتى لو العناصر اللي جنبه أحجامها مختلفة */
 .menu-btn,
@@ -45,9 +55,26 @@ header {
 }
 
 .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    backdrop-filter: blur(6px);
+
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
     /* بيحدف الأيقونة لآخر اليمين */
+}
+
+.icon:hover {
+    background: transparent;
 }
 
 .name {
@@ -72,15 +99,17 @@ header {
 
 .menu-btn {
     cursor: pointer;
+    color: white;
 }
 
 .menu-btn span {
     display: block;
     width: 28px;
     height: 3px;
-    background-color: white;
+    background-color: var(--text-color);
     margin: 5px 3px;
     transition: 0.3s;
+    background-color: white;
 }
 
 
@@ -89,11 +118,13 @@ header {
     position: absolute;
     bottom: 60px;
     right: 5%;
+    border-radius: 40px;
 
-    padding: 14px 28px;
+    padding: 14px 35px;
     
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(8px);
+    background: transparent;
+    backdrop-filter: blur(6px);
+
     
     color: white;
     text-decoration: none;
@@ -101,7 +132,7 @@ header {
     letter-spacing: 2px;
     font-size: 0.95rem;
 
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     
     transition: 0.4s ease;
     z-index: 9999;
@@ -175,7 +206,7 @@ header {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    display: none !important;
+    display: none ;
     z-index: 500;
 }
 
@@ -233,7 +264,36 @@ header {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.5);
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.hero iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.hero-text {
+    position: absolute;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    color: white; /* 👈 ده اللي يخلي الكلام أبيض */
+    text-align: left;
+    bottom: 30px; 
+}
+
+.hero-text h1 {
+    font-size: 60px;
+}
+
+.hero-text p {
+    font-size: 20px;
 }
 
 
@@ -323,4 +383,40 @@ header {
 
 .footer-col ul li a:hover::after {
     width: 100%;
+}
+
+
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-color: #0b0b0b; /* خلفية سوداء بوجاتي */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* عشان الكلمة متعملش Scroll */
+}
+
+.big-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 22vw;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.08);
+    letter-spacing: -0.5vw;
+    user-select: none;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* المحتوى فوق الكلمة */
+    width: 100%;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
 }
