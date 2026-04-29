@@ -1,10 +1,109 @@
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF_8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
-    </head>
-    <body>
 
-    </body>
+<head>
+    <meta charset="UTF_8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <title>Find a Dealer | FUÊRZÁ</title>
+    <link rel="stylesheet" href="Login.css">
+</head>
+
+<body>
+    <header>
+
+        <div id="menu-icon" class="menu-btn" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="name"><img src="Assets\Images\FUERZA_logo-removebg-preview.png" alt="" class="logo"> FUÊRZÁ</div>
+
+        <button class="icon" id="mode-toggle">🌑</button>
+
+    </header>
+    <div id="sidebar" class="sidebar">
+        <ul class="sidebar-links">
+            <li><a href="index.html"><span>Home</span><span class="arrow">></span></a></li>
+            <li><a href="car_models.html"><span>Car Models</span><span class="arrow">></span></a></li>
+            <li><a href="download_catalogs.html"><span>Download Catalogs</span><span class="arrow">></span></a></li>
+            <li><a href="compare_cars.html"><span>Compare Cars</span><span class="arrow">></span></a></li>
+            <li><a href="book_a_test_driver.html"><span>Book A Test Driver</span><span class="arrow">></span></a></li>
+            <li><a href="find_a_dealer.html"><span>Find A Dealer</span><span class="arrow">></span></a></li>
+            <li><a href="contact_us.html"><span>Contact Us</span><span class="arrow">></span></a></li>
+            <li><a href="login.html"><span>Login</span><span class="arrow">></span></a></li>
+            <li><a href="about_us.html"><span>About Us</span><span class="arrow">></span></a></li>
+        </ul>
+    </div>
+
+
+    <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+    <footer class="footer">
+
+            <div class="footer-top">
+
+                <!-- Logo -->
+                <div class="footer-col">
+                    <h2 class="footer-logo">FUÊRZÁ</h2>
+                    <p>Driven by performance, built for excellence.</p>
+                </div>
+
+                <!-- Links -->
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="Index.html">Home</a></li>
+                        <li><a href="car_models.html">Car Models</a></li>
+                        <li><a href="download_catalogs.html">Download Catalog</a></li>
+                        <li><a href="compare_cars.html">Compare Cars</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="book_a_test_driver.html">Book Test Drive</a></li>
+                        <li><a href="find_a_dealer.html">Find Dealer</a></li>
+                        <li><a href="contact_us.html">Support</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-col">
+                    <h3>Follow</h3>
+                    <div class="socials">
+                        <a href="#">f</a>
+                        <a href="#">ig</a>
+                        <a href="#">x</a>
+                        <a href="#">in</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-line"></div>
+
+            <div class="footer-bottom">
+                <p>© 2026 FUÊRZÁ-GROUP. All rights reserved.</p>
+            </div>
+
+        </footer>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            const menuIcon = document.getElementById('menu-icon');
+
+            // تبديل الكلاسات
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('show');
+            menuIcon.classList.toggle('open');
+        }
+    </script>
+</body>
+
 </html>
