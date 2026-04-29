@@ -372,6 +372,7 @@ header {
 .footer-col ul li a:hover::after {
     width: 100%;
 }
+<<<<<<< HEAD
 
 /* socials */
 .socials a {
@@ -413,4 +414,20 @@ header {
         flex-direction: column;
     }
 
+=======
+/* Style for error messages */
+.error-msg {
+    color: #ff4d4d;
+    font-size: 0.75rem;
+    display: block;
+    text-align: left;
+    margin-top: 5px;
+    height: 15px; /* Prevents form jumping */
+}
+
+/* Red border for invalid inputs */
+.input-group input.invalid {
+    border: 1px solid #ff4d4d;
+    background: rgba(255, 77, 77, 0.1);
+>>>>>>> 2dc620839232895e0bcba6b17714b1de95c0373d
 }

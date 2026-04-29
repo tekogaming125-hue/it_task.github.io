@@ -11,6 +11,19 @@
                 menuIcon.classList.toggle('open');
             }
         </script>
+<<<<<<< HEAD
+=======
+        
+        
+    <head>
+        <meta charset="UTF_8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="login.css">
+        <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+        <title>FUÊRZÁ</title>
+    </head>
+    <body>
+>>>>>>> 2dc620839232895e0bcba6b17714b1de95c0373d
 
     <head>
         <meta charset="UTF-8">
@@ -64,33 +77,37 @@
 
         <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
         <main class="login-container">
-                <form class="login-form">
-                    <h2>Login</h2>
-                    
-                    <div class="input-group">
-                        <input type="text" required placeholder="Full Name">
-                    </div>
+            <form class="login-form" id="registrationForm">
+                <h2>Login</h2>
+        
+                <div class="input-group">
+                    <input type="text" id="fullName" placeholder="Full Name">
+                    <span class="error-msg" id="nameError"></span>
+                </div>
 
-                    <div class="input-group">
-                        <input type="email" required placeholder="Email Address">
-                    </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email Address">
+                    <span class="error-msg" id="emailError"></span>
+                </div>
 
-                    <div class="input-group">
-                        <input type="tel" required placeholder="Phone Number">
-                    </div>
+                <div class="input-group">
+                    <input type="tel" id="phone" placeholder="Phone Number">
+                    <span class="error-msg" id="phoneError"></span>
+                </div>
 
-                    <div class="input-group">
-                        <input type="password" required placeholder="Password">
-                    </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password">
+                    <span class="error-msg" id="passError"></span>
+                </div>
 
-                    <button type="submit" class="login-btn">ENTER THE CREW</button>
-                    
-                    <div class="form-footer">
-                        <a href="#">Forgot Password?</a>
-                        <span>|</span>
-                        <a href="#">Join us</a>
-                    </div>
-                </form>
+                <button type="submit" class="login-btn">ENTER THE CREW</button>
+                
+                <div class="form-footer">
+                    <a href="#">Forgot Password?</a>
+                    <span>|</span>
+                    <a href="#">Join us</a>
+                </div>
+            </form>
         </main>
 
         <footer class="footer">
@@ -147,6 +164,7 @@
 
         </footer>
         <script>
+<<<<<<< HEAD
             let btn = document.getElementById("themeBtn");
 
             // 1. تعريف ملف الصوت (تأكد من المسار الصحيح للملف)
@@ -182,6 +200,58 @@
 
                 updateIcon();
             });
+=======
+            document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form from refreshing
+
+            // Get values
+            const name = document.getElementById('fullName');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const password = document.getElementById('password');
+
+            let isValid = true;
+
+            // Helper function to show errors
+            const showError = (input, errorId, message) => {
+                document.getElementById(errorId).innerText = message;
+                input.classList.add('invalid');
+                isValid = false;
+            };
+
+            // Reset errors
+            document.querySelectorAll('.error-msg').forEach(msg => msg.innerText = '');
+            document.querySelectorAll('input').forEach(input => input.classList.remove('invalid'));
+
+            // 1. Name Validation
+            if (name.value.trim().length < 3) {
+                showError(name, 'nameError', 'Please enter your full name');
+            }
+
+            // 2. Email Validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                showError(email, 'emailError', 'Enter a valid email address');
+            }
+
+            // 3. Phone Validation (Simple check for numbers and length)
+            if (phone.value.length < 10) {
+                showError(phone, 'phoneError', 'Enter a valid phone number');
+            }
+
+            // 4. Password Validation
+            if (password.value.length < 6) {
+                showError(password, 'passError', 'Password must be at least 6 characters');
+            }
+
+            // If everything is valid
+            if (isValid) {
+                alert('Welcome to the Crew!');
+                // Here you can add your actual form submission code
+            }
+            });
+
+>>>>>>> 2dc620839232895e0bcba6b17714b1de95c0373d
         </script>
     </body>
     </html>
