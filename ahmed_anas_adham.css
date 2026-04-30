@@ -874,7 +874,7 @@ ul {
 
 .about-products {
     padding: 80px 10%;
-    background: #0b0b0b;
+    background: var(--bg-color);
     color: white;
     text-align: center;
 }
