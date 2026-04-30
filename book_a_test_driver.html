@@ -1,5 +1,5 @@
 <html lang="en">
-    <script defer>
+   <script defer>
             function toggleSidebar() {
                 const sidebar = document.getElementById('sidebar');
                 const overlay = document.getElementById('overlay');
@@ -10,16 +10,14 @@
                 overlay.classList.toggle('show');
                 menuIcon.classList.toggle('open');
             }
-           
-                
         </script>
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="book_a_test_driver.css">
+        <link rel="stylesheet" href="ahmed_anas_adham.css">
         <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-        <title>Book a driving test</title>
+        <title>Book A Test Driver</title>
 
         <script>
             (function () {
@@ -31,7 +29,7 @@
 
     </head>
 
-    <body>
+    <body class="Osama">
         <header>
 
             <div id="menu-icon" class="menu-btn" onclick="toggleSidebar()">
@@ -65,17 +63,10 @@
         </div>
 
         <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
-        
         <section>
-           <div class="form">
-            
-            
-            <h1>Head.Heart.Hands on the steering wheel.Feel the fascination of Porsche</h1>
-            <h2>Book a driving test</h2>
-            
+            <div class="form">
 
             <form  onsubmit="return validateForm(event)">
-                
 
                 <label>Name:</label>
                 <input type="text" id="name" placeholder=" enter your name">
@@ -101,7 +92,7 @@
                 <input type="date" id="date">
                 <error id="dateMsg"></error>
 
-                <button type="submit">Submit</button>
+                <button type="submit" class="book-btn">Submit</button>
 
     </form>
     <p id="formMsg"></p>
@@ -115,7 +106,7 @@
         </section>
 
         <footer class="footer">
-            
+
             <div class="footer-top">
 
                 <!-- Logo -->
@@ -170,10 +161,10 @@
 
         <script>
             let btn = document.getElementById("themeBtn");
-            
+
             // 1. تعريف ملف الصوت (تأكد من المسار الصحيح للملف)
             let themeSound = new Audio("Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3");
-            
+
             // تحميل الثيم المحفوظ
             if (localStorage.getItem("theme") === "dark") {
                 document.documentElement.classList.add("dark");
@@ -204,6 +195,9 @@
 
                 updateIcon();
             });
+        </script>
+
+        <script>
             // passant java//
             
                 function validateForm(event) {
@@ -289,18 +283,7 @@
     return valid;
 
 }
-           
-        
-    
-
-    
-                
-
-    
-
-
-
-        </script>
+    </script>
 
     </body>
 
