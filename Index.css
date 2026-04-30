@@ -12,7 +12,6 @@
     --sidebar-text: #fff;
     --hover-bg: rgba(255,255,255,0.08);
 }
-
 body.light-mode {
     --bg-color: white;
     --text-color: black;
@@ -20,7 +19,6 @@ body.light-mode {
     --sidebar-text: #000;
     --hover-bg: rgb(207, 201, 201);
 }
-
 body {
     background-color: var(--bg-color);
     min-height: 100vh;
@@ -28,7 +26,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
 header {
     color: white;
     position: absolute;
@@ -45,14 +42,11 @@ header {
     z-index: 1000;
     background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
 }
-
-
 /* عشان نضمن إن اللوجو يفضل في النص بالظبط حتى لو العناصر اللي جنبه أحجامها مختلفة */
 .menu-btn,
 .icon {
     margin-left: auto; 
 }
-
 .icon {
     width: 40px;
     height: 40px;
@@ -71,11 +65,9 @@ header {
     transition: 0.3s;
     /* بيحدف الأيقونة لآخر اليمين */
 }
-
 .icon:hover {
     background: transparent;
 }
-
 .name {
     flex: 2;
     /* بيدي مساحة أكبر للوجو في النص */
@@ -88,19 +80,16 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* مسافة بين اللوجو والكلمة */
-}
-
+    gap: 10px;
+ } /* مسافة بين اللوجو والكلمة */
 .logo {
     width: 60px;
     height: auto;
 }
-
 .menu-btn {
     cursor: pointer;
     color: white;
 }
-
 .menu-btn span {
     display: block;
     width: 28px;
@@ -110,9 +99,6 @@ header {
     transition: 0.3s;
     background-color: white;
 }
-
-
-
 .car-btn {
     border-radius: 40px;
 
@@ -133,7 +119,6 @@ header {
     transition: 0.4s ease;
     z-index: 9999;
 }
-
 .car-btn:hover {
     background: white;
     color: black;
@@ -153,7 +138,6 @@ header {
     transition: 0.4s;
     padding-top: 100px;
 }
-
 .sidebar.active {
     left: 0;
 }
@@ -185,8 +169,6 @@ header {
     border-radius: 3px;
     transform: translateX(8px);
 }
-
-
 
 .arrow {
     font-size: 1.2rem;
@@ -232,9 +214,6 @@ header {
     transform: rotate(-45deg) translate(7px, -7px);
     background-color: black;
 }
-
-
-
 
 .video-background {
     position: relative;
@@ -380,11 +359,6 @@ header {
 .footer-col ul li a:hover::after {
     width: 100%;
 }
-
-
-
-
-
 
 .login-btn {
     padding: 8px 18px;
