@@ -270,3 +270,55 @@ margin: 0;
 .footer-col ul li a:hover::after {
     width: 100%;
 }
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: white;
+    font-family: sans-serif;
+}
+
+/* شريط البحث */
+.map-header {
+    background: #f0f0f0; /* نفس اللون الرمادي في صورتك */
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.search-box input {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    width: 250px;
+    outline: none;
+}
+
+/* الخريطة - تأكد من وجود height */
+#map {
+    height: 500px; /* هذا السطر هو الأهم لظهور الخريطة */
+    width: 100%;
+    background-color: #333; /* لون مؤقت */
+}
+
+/* تصميم علامة المدينة */
+.custom-label {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* تذييل الصفحة (Footer) */
+.footer-demo {
+    padding: 40px;
+    background: #000;
+}
+
+.footer-demo h2 {
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+}

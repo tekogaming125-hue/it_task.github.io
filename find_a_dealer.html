@@ -5,8 +5,9 @@
     <meta charset="UTF_8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <title>Find a Dealer | FUÊRZÁ</title>
-    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="find_a_dealer.css">
 </head>
 
 <body>
@@ -39,6 +40,40 @@
 
 
     <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+    <header class="map-header">
+        <div class="search-box">
+            <input type="text" placeholder="Search for FUÊRZÁ partners...">
+        </div>
+    </header>
+
+    <div id="map"></div>
+
+    <footer class="footer-demo">
+        <h2>FUÊRZÁ</h2>
+        <p>Driven by performance, built for excellence.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // التأكد من تحميل الصفحة أولاً
+        document.addEventListener('DOMContentLoaded', function() {
+            // إنشاء الخريطة
+            var map = L.map('map').setView([48.8566, 12.3522], 4);
+
+            // إضافة شكل الخريطة (قشرة الخريطة)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+            // إضافة نقطة تجريبية (لندن مثلاً)
+            const customIcon = L.divIcon({
+                className: 'custom-label',
+                html: 'London',
+                iconSize: [80, 25]
+            });
+            L.marker([51.5074, -0.1278], {icon: customIcon}).addTo(map);
+        });
+    </script>
 
     <footer class="footer">
 
