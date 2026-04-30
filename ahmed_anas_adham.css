@@ -58,6 +58,12 @@ body {
     transition: 0.3s;
 }
 
+.Osama {
+    background-image: url(Assets/Images/WhatsApp\ Image\ 2026-04-26\ at\ 8.04.17\ PM.jpeg);
+    background-size: cover;
+    transition: 0.3s;
+}
+
 /* ================= HEADER ================= */
 header {
     position: absolute;
@@ -1047,4 +1053,77 @@ ul {
 }
 .features-section {
     background: var(--bg-color);
+}
+
+
+
+
+/* Osama */
+table {
+    border-collapse:collapse;
+    border: 2px solid rgba(225, 225, 225, 0.3);
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    width: 1400px;
+    margin: 50px auto;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    margin-top: 100px;
+
+
+
+}
+
+thead {
+    background-color:  #4a4f55;
+   
+}
+
+
+table th,table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid rgba(225, 225, 225, 0.2);
+    border-collapse: collapse;
+    backdrop-filter: blur(3px);
+    font-size: blod;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+table th {
+    border-bottom: 3px solid #FFFDD0;
+    background-color: rgba(225, 225, 225, 0.1);
+
+}
+
+table img {
+    width: 300px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+table img:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+tbody tr:hover {
+background-color: rgba(225, 225, 225, 0.15);
+transition: 0.3;
+}
+
+thead th {
+    font-size: 25px;
+    color: white;
+}
+
+tbody tr {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: blod;
 }
