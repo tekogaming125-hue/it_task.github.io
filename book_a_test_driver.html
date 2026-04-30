@@ -10,6 +10,8 @@
                 overlay.classList.toggle('show');
                 menuIcon.classList.toggle('open');
             }
+           
+                
         </script>
 
     <head>
@@ -17,7 +19,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="book_a_test_driver.css">
         <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-        <title>Download Catalogs</title>
+        <title>Book a driving test</title>
 
         <script>
             (function () {
@@ -65,6 +67,50 @@
         <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
         
         <section>
+           <div class="form">
+            
+            
+            <h1>Head.Heart.Hands on the steering wheel.Feel the fascination of Porsche</h1>
+            <h2>Book a driving test</h2>
+            
+
+            <form  onsubmit="return validateForm(event)">
+                
+
+                <label>Name:</label>
+                <input type="text" id="name" placeholder=" enter your name">
+                <error id="nameMsg"></error>
+
+                <label>Phone Number:</label>
+                <input type="text" id="phone" placeholder="enter your phone number">
+                <error id="phoneMsg"></error>
+
+                 <label>Car Model:</label>
+                 <select id="model" placeholder="select model">
+                    <option value=""> Select Model </option>
+                    <option value="911">911</option>
+                    <option value="911 Turbo">911 Turbo</option>
+                    <option value="718">718</option>
+                    <option value="Taycan Turbo">Taycan Turbo</option>
+                    <option value="Taycan Turbo">Taycan Turbo</option>
+                    <option value="Panamera">Panamera</option>
+                </select>
+                <error id="modelMsg"></error>
+
+                <label>Date:</label>
+                <input type="date" id="date">
+                <error id="dateMsg"></error>
+
+                <button type="submit">Submit</button>
+
+    </form>
+    <p id="formMsg"></p>
+
+</div>
+
+
+
+
             <!-- شغلك هيبقى هنا يارب ما تبوظى حاجه فى السيكشن -->
         </section>
 
@@ -158,6 +204,102 @@
 
                 updateIcon();
             });
+            // passant java//
+            
+                function validateForm(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+
+    const phone = document.getElementById("phone").value.trim();
+
+    const model = document.getElementById("model").value;
+
+    const date = document.getElementById("date").value;
+
+    // عناصر الرسائل
+
+    const nameMsg = document.getElementById("nameMsg");
+
+    const phoneMsg = document.getElementById("phoneMsg");
+
+    const modelMsg = document.getElementById("modelMsg");
+
+    const dateMsg = document.getElementById("dateMsg");
+
+    // reset
+
+    nameMsg.textContent = "";
+
+    phoneMsg.textContent = "";
+
+    modelMsg.textContent = "";
+
+    dateMsg.textContent = "";
+
+    let valid = true;
+
+    // Name
+
+    if (name === "") {
+
+        nameMsg.textContent = "Enter your name";
+
+        valid = false;
+
+    }
+
+    // Phone
+
+    if (phone.length !== 11) {
+
+        phoneMsg.textContent = "Phone must be 11 digits";
+
+        valid = false;
+
+    }
+
+    // Model
+
+    if (model === "") {
+
+        modelMsg.textContent = "Select a car model";
+
+        valid = false;
+
+    }
+
+    // Date
+
+    if (date === "") {
+
+        dateMsg.textContent = "Select a date";
+
+        valid = false;
+
+    }
+
+    if (valid) {
+
+        alert("Form submitted successfully!");
+
+    }
+
+    return valid;
+
+}
+           
+        
+    
+
+    
+                
+
+    
+
+
+
         </script>
 
     </body>
