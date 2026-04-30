@@ -1,40 +1,69 @@
 <html lang="en">
 
-<head>
-    <meta charset="UTF_8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="car_models.css">
-    <title>Car Models</title>
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-</head>
+ <script defer>
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('overlay');
+                const menuIcon = document.getElementById('menu-icon');
 
-<body>
-    <header>
-        <div id="menu-icon" class="menu-btn" onclick="toggleSidebar()">
-            <span></span>
-            <span></span>
-            <span></span>
+                // تبديل الكلاسات
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('show');
+                menuIcon.classList.toggle('open');
+            }
+        </script>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="car_models.css">
+        <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+        <title>Download Catalogs</title>
+
+        <script>
+            (function () {
+                if (localStorage.getItem("theme") === "dark") {
+                    document.documentElement.classList.add("dark");
+                }
+            });
+        </script>
+
+    </head>
+
+    <body>
+        <header>
+
+            <div id="menu-icon" class="menu-btn" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <pre>Menu</pre>
+            </div>
+
+            <div class="name"><img src="Assets/Images/FUERZA_logo-removebg-preview.png" alt="" class="logo"> FUÊRZÁ</div>
+
+            <button class="icon" id="themeBtn">☀️</button>
+            <audio id="theme-sound"
+                src="Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3"></audio>
+
+        </header>
+
+
+        <div id="sidebar" class="sidebar">
+            <ul class="sidebar-links">
+                <li><a href="index.html"><span>Home</span><span class="arrow">></span></a></li>
+                <li><a href="car_models.html"><span>Car Models</span><span class="arrow">></span></a></li>
+                <li><a href="download_catalogs.html"><span>Download Catalogs</span><span class="arrow">></span></a></li>
+                <li><a href="compare_cars.html"><span>Compare Cars</span><span class="arrow">></span></a></li>
+                <li><a href="book_a_test_driver.html"><span>Book A Test Driver</span><span class="arrow">></span></a></li>
+                <li><a href="find_a_dealer.html"><span>Find A Dealer</span><span class="arrow">></span></a></li>
+                <li><a href="contact_us.html"><span>Contact Us</span><span class="arrow">></span></a></li>
+                <li><a href="login.html"><span>Login</span><span class="arrow">></span></a></li>
+                <li><a href="about_us.html"><span>About Us</span><span class="arrow">></span></a></li>
+            </ul>
         </div>
-        <div class="name">
-            <img src="Assets\Images\FUERZA_logo-removebg-preview.png" alt="" class="logo">
-            FUÊRZÁ
-        </div>
-        <button class="icon" id="mode-toggle">🌑</button><audio id="theme-sound" src="Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3"></audio>
-    </header>
-    <div id="sidebar" class="sidebar">
-        <ul class="sidebar-links">
-            <li><a href="index.html"><span>Home</span><span class="arrow">></span></a></li>
-            <li><a href="car_models.html"><span>Car Models</span><span class="arrow">></span></a></li>
-            <li><a href="download_catalogs.html"><span>Download Catalogs</span><span class="arrow">></span></a></li>
-            <li><a href="compare_cars.html"><span>Compare Cars</span><span class="arrow">></span></a></li>
-            <li><a href="book_a_test_driver.html"><span>Book A Test Driver</span><span class="arrow">></span></a></li>
-            <li><a href="find_a_dealer.html"><span>Find A Dealer</span><span class="arrow">></span></a></li>
-            <li><a href="contact_us.html"><span>Contact Us</span><span class="arrow">></span></a></li>
-            <li><a href="login.html"><span>Login</span><span class="arrow">></span></a></li>
-            <li><a href="about_us.html"><span>About Us</span><span class="arrow">></span></a></li>
-        </ul>
-    </div>
-    <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+        <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
     <section>
 
@@ -147,104 +176,97 @@
         </div>
     </section>
 
-    <footer>
-        <footer class="porsche-footer">
-            <div class="footer-container">
-                <div class="footer-column">
-                    <h3>Locations & Contacts</h3>
+      <footer class="footer">
+
+            <div class="footer-top">
+
+                <!-- Logo -->
+                <div class="footer-col">
+                    <h2 class="footer-logo">FUÊRZÁ</h2>
+                    <p>Driven by performance, built for excellence.</p>
+                </div>
+
+                <!-- Links -->
+                <div class="footer-col">
+                    <h3>Company</h3>
                     <ul>
-                        <li><a href="#">Get in touch</a></li>
-                        <li><a href="#">Subscribe to newsletter</a></li>
+                        <li><a href="Index.html">Home</a></li>
+                        <li><a href="car_models.html">Car Models</a></li>
+                        <li><a href="download_catalogs.html">Download Catalog</a></li>
+                        <li><a href="compare_cars.html">Compare Cars</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-column">
-                    <h3>Company & Support</h3>
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3>Services</h3>
                     <ul>
-                        <li><a href="#">PFUÊRZÁ Cars Cairo Egypt</a></li>
-                        <li><a href="#">Recall Information</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">Global Partnership Council</a></li>
-                        <li><a href="#">Compliance</a></li>
-                        <li><a href="#">Sustainability</a></li>
-                        <li><a href="#">Newsroom & Press</a></li>
+                        <li><a href="book_a_test_driver.html">Book Test Drive</a></li>
+                        <li><a href="find_a_dealer.html">Find Dealer</a></li>
+                        <li><a href="contact_us.html">Support</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="Login.html">Login</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-column">
-                    <h3>FUÊRZÁ on the web</h3>
-                    <ul>
-                        <li><a href="Index.html">FUÊRZÁ Homepage</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">FUÊRZÁ Configurator</a></li>
-                        <li><a href="#">Find New and Pre-owned Vehicles</a></li>
-                        <li><a href="#">FUÊRZÁ Connect</a></li>
-                    </ul>
+                <!-- Social -->
+                <div class="footer-col">
+                    <h3>Follow</h3>
+                    <div class="socials">
+                        <a href="#">f</a>
+                        <a href="#">ig</a>
+                        <a href="#">x</a>
+                        <a href="#">in</a>
+                    </div>
                 </div>
+
             </div>
 
-            <hr class="footer-divider">
+            <div class="footer-line"></div>
 
             <div class="footer-bottom">
-                <p>© 2026 FUÊRZÁ Cars Cairo Egypt, Inc.</p>
-                <div class="legal-links">
-                    <a href="#">Legal notice</a> | <a href="#">Privacy notice</a> | <a href="#">Cairo Privacy</a> | <a
-                        href="#">Accessibility Statement</a>
-                </div>
-                <h1 class="brand-logo">FUÊRZÁ</h1>
+                <p>© 2026 FUÊRZÁ-GROUP. All rights reserved.</p>
             </div>
+
         </footer>
 
-
-    </footer>
     <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            const menuIcon = document.getElementById('menu-icon');
+            let btn = document.getElementById("themeBtn");
 
-            // تبديل الكلاسات
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('show');
-            menuIcon.classList.toggle('open');
-        }
-        function playVid(card) {
-            const video = card.querySelector('.card-video');
-            video.play();
-        }
+            // 1. تعريف ملف الصوت (تأكد من المسار الصحيح للملف)
+            let themeSound = new Audio("Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3");
 
-        function pauseVid(card) {
-            const video = card.querySelector('.card-video');
-            video.pause();
-            video.currentTime = 0; // يرجع لأول الفيديو لما تبعد الماوس
-        }
-const toggleBtn = document.getElementById('mode-toggle');
-const body = document.body;
+            // تحميل الثيم المحفوظ
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.classList.add("dark");
+            }
 
-// 1. تعريف ملف الصوت (تأكد إن المسار واسم الملف صح عندك)
-const toggleSound = new Audio('Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3');
+            // تحديث الأيقونة
+            function updateIcon() {
+                btn.textContent = document.documentElement.classList.contains("dark")
+                    ? "🌑"
+                    : "☀️";
+            }
 
-// التأكد من اختيار المستخدم السابق عند تحميل الصفحة
-if (localStorage.getItem('theme') === 'light') {
-    body.classList.add('light-mode');
-}
+            updateIcon();
 
-toggleBtn.addEventListener('click', () => {
-    // 2. تشغيل الصوت فوراً عند الضغط
-    toggleSound.currentTime = 0; // يصفر الصوت عشان يلحق يشتغل مع الضغطات السريعة
-    toggleSound.play();
+            // تغيير الثيم
+            btn.addEventListener("click", function () {
+                // 2. تشغيل الصوت عند كل ضغطة
+                themeSound.currentTime = 0; // بيرجع الصوت للبداية عشان يلحق يشتغل لو دوست ورا بعض
+                themeSound.play();
 
-    body.classList.toggle('light-mode');
+                document.documentElement.classList.toggle("dark");
 
-    // حفظ الاختيار
-    if (body.classList.contains('light-mode')) {
-        localStorage.setItem('theme', 'light');
-    } else {
-        localStorage.setItem('theme', 'dark');
-    }
-});
+                if (document.documentElement.classList.contains("dark")) {
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    localStorage.setItem("theme", "light");
+                }
 
-    </script>
+                updateIcon();
+            });
+        </script>
 
 </body>
 

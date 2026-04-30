@@ -19,6 +19,15 @@
     --input-bg: rgb(255, 255, 255);
     --btn-border: hsl(0, 0%, 100%);
     --btn-text: #000000;
+    --model-color: white;
+    --card-container-color: #111;
+    --card-color: #1c1c1c;
+    --card-content-color: white;
+    --explore-color: white;
+    --explore-hover-bg: white;
+    --explore-hover-cn: black;
+    --explore-hover-shd: 0 0 15px rgba(255, 255, 255, 0.6);
+    --explore-border: white;
 }
 
 .dark {
@@ -32,6 +41,15 @@
     --input-bg: rgb(255, 255, 255);
     --btn-border: #ff0000d4;
     --btn-text: #ff0000d4;
+    --model-color: black;
+    --card-container-color: #b0afaff1;
+    --card-color: #1c1c1c;
+    --card-content-color: white;
+    --explore-color: white;
+    --explore-hover-bg: white;
+    --explore-hover-cn: black;
+    --explore-hover-shd: 0 0 15px rgba(255, 255, 255, 0.6);
+    --explore-border: white;
 }
 
 body {
@@ -48,6 +66,7 @@ header {
     margin-top: -10px;
     margin-bottom: -6px;
     display: flex;
+    background-color: transparent;
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
@@ -185,108 +204,6 @@ header {
 }
 
 
-/* لحد هنا شغل السايد بار والهيدر متلعبش فيه */
-
-
-/* --- Login Form Styles --- */
-.login-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 20px; /* Space for fixed header */
-}
-
-.login-form {
-    background: var(--form-bg);
-    color: var(--form-text);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 40px;
-    border-radius: 5px;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
-
-.login-form h2 {
-    font-family: 'Michroma', sans-serif;
-    color: var(--form-text);
-    margin-bottom: 30px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-}
-
-.input-group {
-    margin-bottom: 20px;
-    background: var(--input-bg);
-    color: var(--);
-}
-
-.input-group input {
-    width: 100%;
-    padding: 15px;
-    background: var(--input-bg);
-    color: var(--form-text);
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    border-radius: 1px;
-    transition: 0.3s;
-    border: 1px solid var(--btn-border);
-}
-
-.input-group input:focus {
-    background: var(--form-bg);
-    box-shadow: 0 0 10px;
-}
-
-.login-btn {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid var(--btn-border);
-    background: var(--form-bg);
-    color: var(--btn-text);
-    font-family: 'Michroma', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: 0.4s;
-    margin-top: 10px;
-}
-
-.login-btn:hover {
-    background: var(--btn-text);
-    color: var(--bg-color)
-}
-
-.form-footer {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    font-size: 0.8rem;
-}
-
-.form-footer a {
-    color: var(--form-text);
-    text-decoration: none;
-    opacity: 0.7;
-    transition: 0.3s;
-}
-
-.form-footer a:hover {
-    opacity: 1;
-    text-decoration: underline;
-}
-
-.form-footer span {
-    color: var(--form-text)
-}
-
-
-
 /* ===== FOOTER ===== */
 
 .footer {
@@ -406,6 +323,29 @@ header {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
+
+    .gallery {
+        flex-direction: column;
+        height: 250px;
+    }
+    
+    .gallery img {
+        width: 100%;
+        height: 50%;
+    }
+    
+    .content {
+        height: 500px;
+    }
+    
+    .model {
+        font-size: 18px;
+    }
+    
+    ul {
+        font-size: 14px;
+    }
+    
     .button {
         font-size: 12px;
         padding: 8px 15px;
@@ -417,18 +357,185 @@ header {
 
 }
 
-/* Style for error messages */
-.error-msg {
-    color: #ff4d4d;
-    font-size: 16px;
-    display: block;
-    text-align: center;
-    height: 1px; /* Prevents form jumping */
+
+/* Ahmed */
+/* ================= CARDS ================= */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding-bottom: 50px;
 }
 
-/* Red border for invalid inputs */
-.input-group input.invalid {
-    border: 1px solid #ff4d4d;
-    
-    background: rgba(255, 77, 77, 0.1);
+/* الكارت */
+.card {
+    width: 95%;
+    max-width: 1100px;
+    margin: auto;
+    border-radius: 50px;
+    overflow: hidden;
+    background: #ffffff00;
 }
+
+/* الصور */
+.gallery {
+    display: flex;
+    height: 400px;
+}
+
+.gallery img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* المحتوى */
+.content {
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+}
+
+/* الفيديو */
+.vcarrera {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+
+/* النص */
+.convideo {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 30px;
+}
+
+.model {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+ul {
+    padding: 20px;
+    font-size: 18px;
+}
+
+/* الزرار */
+.button {
+    position: absolute;
+    bottom: 100px;
+    right: 75px;
+    z-index: 3;
+    padding: 10px 25px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Anas */
+/* --- Login Form Styles --- */
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px; /* Space for fixed header */
+}
+
+.login-form {
+    background: var(--form-bg);
+    color: var(--form-text);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.login-form h2 {
+    font-family: 'Michroma', sans-serif;
+    color: var(--form-text);
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    background: var(--input-bg);
+    color: var(--);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    background: var(--input-bg);
+    color: var(--form-text);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 1px;
+    transition: 0.3s;
+    border: 1px solid var(--btn-border);
+}
+
+.input-group input:focus {
+    background: var(--form-bg);
+    box-shadow: 0 0 10px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--btn-border);
+    background: var(--form-bg);
+    color: var(--btn-text);
+    font-family: 'Michroma', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: var(--btn-text);
+    color: var(--bg-color)
+}
+
+.form-footer {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.8rem;
+}
+
+.form-footer a {
+    color: var(--form-text);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.form-footer a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.form-footer span {
+    color: var(--form-text)
+}
+
+
+/* Adham */

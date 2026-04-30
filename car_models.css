@@ -1,18 +1,24 @@
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* ============================= */
+/* themes */
 :root {
-    --bg-color: black;
-    --name-color: white;
-    --menu-color: white;
-    --ex-color: black;
-    --side-bg:#b1b7bee3;
-    --sidelink-color: #191919;
-    --sidehover-color: rgb(207, 201, 201);
+    --bg-color: #828891;
+    --text-color: #000;
+    --card-overlay: rgba(0,0,0,0.5);
+    --sidebar-bg: #b1b7bee3;
+    --sidebar-text: #000;
+    --hover-bg: rgb(202, 201, 207);
+    --form-bg: #ffffff50;
+    --form-text: #000000;
+    --input-bg: rgb(255, 255, 255);
+    --btn-border: hsl(0, 0%, 100%);
+    --btn-text: #000000;
     --model-color: white;
     --card-container-color: #111;
     --card-color: #1c1c1c;
@@ -22,21 +28,19 @@
     --explore-hover-cn: black;
     --explore-hover-shd: 0 0 15px rgba(255, 255, 255, 0.6);
     --explore-border: white;
-    --footer-bg: #000;
-    --footer-color: #fff;
-    --footer-h3: #888;
-    --footer-hovere: #d5001c;
-    --cr: #aaa;
 }
 
-.light-mode {
-    --bg-color: white;
-    --name-color: white;
-    --menu-color: white;
-    --ex-color: white;
-    --side-bg:#1c1c1cef ;
-    --sidelink-color: white;
-    --sidehover-color: rgb(207, 201, 201);
+.dark {
+    --bg-color: #000000;
+    --text-color: #ff0000d4;
+    --sidebar-bg: #1f1f1fe3;
+    --sidebar-text: #ff0000d4;
+    --hover-bg: #333;
+    --form-bg: rgba(0,0,0,0.6);
+    --form-text: #ff0000d4;
+    --input-bg: rgb(255, 255, 255);
+    --btn-border: #ff0000d4;
+    --btn-text: #ff0000d4;
     --model-color: black;
     --card-container-color: #b0afaff1;
     --card-color: #1c1c1c;
@@ -46,40 +50,33 @@
     --explore-hover-cn: black;
     --explore-hover-shd: 0 0 15px rgba(255, 255, 255, 0.6);
     --explore-border: white;
-    --footer-bg: white;
-    --footer-color: black;
-    --footer-h3: #373737;
-    --footer-hovere: #d5001c;
-    --cr: black;
 }
 
 body {
     background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s;
 }
 
-/* ==================================== */
+/* ================= HEADER ================= */
 header {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    display: flex;
     margin-top: -10px;
     margin-bottom: -6px;
+    display: flex;
+    background-color: transparent;
     justify-content: space-between;
-    /* بيوزع العناصر: واحد شمال، واحد نص، واحد يمين */
     align-items: center;
-    padding: 0px 30px;
-    /* مسافة داخلية من الجوانب */
-    z-index: 9000;
-    background: transparent;
+    padding: 0 30px;
+    z-index: 900;
 }
 
-/* عشان نضمن إن اللوجو يفضل في النص بالظبط حتى لو العناصر اللي جنبه أحجامها مختلفة */
+/* توزيع */
 .menu-btn,
 .icon {
     flex: 1;
-    /* بيخلي الجانب اليمين والشمال واخدين نفس المساحة */
 }
 
 .icon {
@@ -87,7 +84,6 @@ header {
     justify-content: flex-end;
     background: none;
     border: none;
-    /* بيحدف الأيقونة لآخر اليمين */
     font-size: 22px;
     cursor: pointer;
     padding: 5px;
@@ -95,77 +91,74 @@ header {
 }
 
 .name {
+    color: var(--text-color);
     flex: 2;
-    /* بيدي مساحة أكبر للوجو في النص */
     text-align: center;
     font-size: 28px;
     letter-spacing: 3px;
-    color: var(--name-color);
     font-family: 'Michroma', sans-serif;
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
-    display: flex;
 }
 
 .logo {
     width: 50px;
+    z-index: 9999;
 }
 
-
-/* --- حركة الـ 3 شرط لـ X --- */
+/* ================= MENU ================= */
 .menu-btn {
-    position: relative;
-    z-index: 900;
-    /* عشان تفضل فوق السايد بار */
     cursor: pointer;
+    position: relative;
+    z-index: 1100;
 }
 
 .menu-btn span {
     display: block;
-    width: 26px;
-    height: 2px;
-    background-color: var(--menu-color);
-    margin: 5px 0;
+    width: 30px;
+    height: 1.8px;
+    background-color: var(--text-color);
+    margin: 5px 2px;
     transition: 0.3s;
-
 }
 
 .menu-btn.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-    background-color: var(--ex-color);
-    /* تغيير اللون لأسود عشان يبان فوق المنيو البيضاء */
+    background-color: #b1b7be00;
 }
 
 .menu-btn.open span:nth-child(2) {
     opacity: 0;
-    background-color: var(--ex-color);
+    background-color: #b1b7be00;
 }
 
 .menu-btn.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
-    background-color: var(--ex-color);
+    transform: rotate(-45deg) translate(6px, -6px);
+    background-color: #b1b7be00;
+}
+
+.menu-btn.open pre {
+    color: #b1b7be00;
 }
 
 
-
-/* --- السايد بار --- */
+/* ================= SIDEBAR ================= */
 .sidebar {
+    background-color: var(--sidebar-bg);
     position: fixed;
     top: 0;
     left: -100%;
-    /* مخفي جهة الشمال */
-    width: 320px;
+    width: 350px;
     height: 100%;
     z-index: 1001;
-    transition: 0.4s ease;
-    padding-top: 70px;
-    background-color: var(--side-bg);
+    transition: 0.4s;
+    padding-top: 55px;
 }
 
 .sidebar.active {
     left: 0;
-    /* يظهر لما نضيف كلاس active */
 }
 
 .sidebar-links {
@@ -177,43 +170,192 @@ header {
 }
 
 .sidebar-links li a {
+    color: var(--sidebar-text);
     display: flex;
     justify-content: space-between;
-    /*بيخلي الكلام ف ناحية و السهم ف ناحية*/
-    padding: 12px 25px;
+    padding: 16px 25px;
     text-decoration: none;
     border-bottom: solid 2px #ffffff82;
-    color: var(--sidelink-color);
-    font-size: 0.9rem;
     font-family: 'Michroma', sans-serif;
+    font-size: 18px;
     transition: 0.1s ease;
 }
 
 .sidebar-links li a:hover {
     transform: translateY(1px);
-    background-color: var(--sidehover-color);
+    background-color: var(--hover-bg);
     border-radius: 3px;
 }
 
-
-/* --- البلور لما افتح السايد بار لباقي الصفحه(Overlay) --- */
+/* ================= OVERLAY ================= */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0,0,0,0.5);
     display: none;
     z-index: 1000;
-    transition: opacity 0.4s ease;
 }
 
 .overlay.show {
-    opacity: 1;
-    pointer-events: auto;
+    display: block;
 }
 
+
+/* ===== FOOTER ===== */
+
+.footer {
+    background: #0a0a0a;
+    color: #fff;
+    padding: 70px 40px 20px;
+}
+
+/* layout */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* columns */
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* logo */
+.footer-logo {
+    font-size: 26px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+/* titles */
+.footer-col h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    position: relative;
+}
+
+/* underline animation */
+.footer-col h3::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s;
+}
+
+.footer-col:hover h3::after {
+    width: 40px;
+}
+
+/* links */
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin: 8px 0;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #aaa;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* hover line effect */
+.footer-col ul li a::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+}
+
+.footer-col ul li a:hover::after {
+    width: 100%;
+}
+
+/* socials */
+.socials a {
+    display: inline-block;
+    margin-right: 12px;
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* divider line */
+.footer-line {
+    height: 1px;
+    background: #222;
+    margin: 40px 0 20px;
+}
+
+/* bottom */
+.footer-bottom {
+    text-align: center;
+    font-size: 15px;
+    color: #777;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    .gallery {
+        flex-direction: column;
+        height: 250px;
+    }
+    
+    .gallery img {
+        width: 100%;
+        height: 50%;
+    }
+    
+    .content {
+        height: 500px;
+    }
+    
+    .model {
+        font-size: 18px;
+    }
+    
+    ul {
+        font-size: 14px;
+    }
+    
+    .button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+}
 
 .car1 {
     width: 100%;
@@ -394,80 +536,4 @@ header {
     opacity: 1;
     /* الزرار بيبان لما تقف على الكارد */
     transform: translateY(0);
-}
-
-.porsche-footer {
-    background-color: var(--footer-bg);
-    /* الخلفية سوداء */
-    /* color: var(--footer-color); */
-    padding: 60px 40px 20px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: flex-start;
-    /* توزيع الأعمدة من الشمال */
-    gap: 100px;
-    /* المسافة بين الأعمدة */
-    margin-bottom: 40px;
-}
-
-.footer-column h3 {
-    font-size: 14px;
-    color: var(--footer-h3);
-    /* العناوين لونها رمادي فاتح */
-    margin-bottom: 20px;
-    font-weight: normal;
-}
-
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-column ul li {
-    margin-bottom: 12px;
-}
-
-.footer-column ul li a {
-    color: var(--footer-color);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.footer-column ul li a:hover {
-    color: var(--footer-hovere);
-    /* لون بورش الأحمر عند التمرير */
-}
-
-.footer-divider {
-    border: 0;
-    border-top: 1px solid #333;
-    margin: 40px 0 20px;
-}
-
-.footer-bottom {
-    font-size: 12px;
-    color: var(--cr);
-}
-
-.legal-links {
-    margin-top: 10px;
-}
-
-.legal-links a {
-    color: var(--cr);
-    text-decoration: underline;
-    margin-right: 5px;
-}
-
-.brand-logo {
-    text-align: center;
-    font-size: 40px;
-    letter-spacing: 15px;
-    /* تباعد الحروف المميز لبورش */
-    margin-top: 50px;
-    font-weight: bold;
-    color: var(--footer-color);
 }
