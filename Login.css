@@ -232,7 +232,7 @@ header {
     border: none;
     outline: none;
     font-size: 1rem;
-    border-radius: px;
+    border-radius: 1px;
     transition: 0.3s;
     border: 1px solid var(--btn-border);
 }
