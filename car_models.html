@@ -1,272 +1,272 @@
 <html lang="en">
 
- <script defer>
-            function toggleSidebar() {
-                const sidebar = document.getElementById('sidebar');
-                const overlay = document.getElementById('overlay');
-                const menuIcon = document.getElementById('menu-icon');
+<script defer>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const menuIcon = document.getElementById('menu-icon');
 
-                // تبديل الكلاسات
-                sidebar.classList.toggle('active');
-                overlay.classList.toggle('show');
-                menuIcon.classList.toggle('open');
-            }
-        </script>
+        // تبديل الكلاسات
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('show');
+        menuIcon.classList.toggle('open');
+    }
+</script>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="car_models.css">
-        <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-        <title>Download Catalogs</title>
-
-        <script>
-            (function () {
-                if (localStorage.getItem("theme") === "dark") {
-                    document.documentElement.classList.add("dark");
-                }
-            });
-        </script>
-
-    </head>
-
-    <body>
-        <header>
-
-            <div id="menu-icon" class="menu-btn" onclick="toggleSidebar()">
-                <span></span>
-                <span></span>
-                <span></span>
-                <pre>Menu</pre>
-            </div>
-
-            <div class="name"><img src="Assets/Images/FUERZA_logo-removebg-preview.png" alt="" class="logo"> FUÊRZÁ</div>
-
-            <button class="icon" id="themeBtn">☀️</button>
-            <audio id="theme-sound"
-                src="Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3"></audio>
-
-        </header>
-
-
-        <div id="sidebar" class="sidebar">
-            <ul class="sidebar-links">
-                <li><a href="index.html"><span>Home</span><span class="arrow">></span></a></li>
-                <li><a href="car_models.html"><span>Car Models</span><span class="arrow">></span></a></li>
-                <li><a href="download_catalogs.html"><span>Download Catalogs</span><span class="arrow">></span></a></li>
-                <li><a href="compare_cars.html"><span>Compare Cars</span><span class="arrow">></span></a></li>
-                <li><a href="book_a_test_driver.html"><span>Book A Test Driver</span><span class="arrow">></span></a></li>
-                <li><a href="find_a_dealer.html"><span>Find A Dealer</span><span class="arrow">></span></a></li>
-                <li><a href="contact_us.html"><span>Contact Us</span><span class="arrow">></span></a></li>
-                <li><a href="login.html"><span>Login</span><span class="arrow">></span></a></li>
-                <li><a href="about_us.html"><span>About Us</span><span class="arrow">></span></a></li>
-            </ul>
-        </div>
-
-        <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
-
-    <section>
-
-        <div class="car1">
-            <video autoplay muted loop poster="Assets/Images/911.jpeg" class="back1">
-                <source src="Assets/Videos/WhatsApp Video 2026-04-27 at 4.24.47 AM.mp4" type="video/mp4">
-                your browser doesn't support HTML5 video.
-            </video>
-            <div class="video-overlay"></div>
-            <div class="content">
-                <div class="model">
-                    911.
-                </div>
-                <a href="" Download class="discover-btn"> Discover more</a>
-            </div>
-        </div>
-
-    </section>
-
-    <section class="porsche-journey">
-        <h2 class="model-title">Your Porsche journey starts now.</h2>
-
-        <div class="cards-container">
-            <div class="card" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
-                <div class="media-wrapper">
-                    <img src="Assets/Images/911.jpeg" class="card-img">
-                    <video src="Assets/Videos/911.mp4" loop muted class="card-video"></video>
-                </div>
-                <div class="card-content">
-                    <div class="model-info">
-                        <h3>911</h3>
-                        <p>Iconic sports car with rear engine.</p>
-                    </div>
-                    <a href="#" class="explore-btn">Explore &rarr;</a>
-                </div>
-            </div>
-
-            <div class="card" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
-                <div class="media-wrapper">
-                    <img src="Assets/Images/911-turbo.jpeg" class="card-img">
-                    <video src="Assets/Videos/911-turbo.mp4" loop muted class="card-video"></video>
-                </div>
-                <div class="card-content">
-                    <div class="model-info">
-                        <h3>911 Turbo</h3>
-                        <p>Precise mid-engine sports car.</p>
-                    </div>
-                    <a href="#" class="explore-btn">Explore &rarr;</a>
-                </div>
-            </div>
-        </div>
-        <div class="cards-container">
-            <div class="card" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
-                <div class="media-wrapper">
-                    <img src="Assets/Images/panamera.jpeg" class="card-img">
-                    <video src="Assets/Videos/panerma.mp4" loop muted class="card-video"></video>
-                </div>
-                <div class="card-content">
-                    <div class="model-info">
-                        <h3>Panamera</h3>
-                        <p>Electric sports car: 4 doors, 4/5 seats.</p>
-                    </div>
-                    <a href="#" class="explore-btn">Explore &rarr;</a>
-                </div>
-            </div>
-
-            <div class="card" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
-                <div class="media-wrapper">
-                    <img src="Assets/Images/WhatsApp Image 2026-04-26 at 11.59.38 PM (3).jpeg" class="card-img">
-                    <video src="Assets/Videos/taycan.mp4" loop muted class="card-video"></video>
-                </div>
-                <div class="card-content">
-                    <div class="model-info">
-                        <h3>Taycan 4s</h3>
-                        <p>Luxury sedan with a high level of comfort: 4 doors, 4/5</p>
-                    </div>
-                    <a href="#" class="explore-btn">Explore &rarr;</a>
-                </div>
-            </div>
-        </div>
-        <div class="cards-container">
-            <div class="card" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
-                <div class="media-wrapper">
-                    <img src="Assets/Images/WhatsApp Image 2026-04-26 at 11.59.38 PM (4).jpeg" class="card-img">
-                    <video src="Assets/Videos/taycan-turbo.mp4" loop muted class="card-video"></video>
-                </div>
-                <div class="card-content">
-                    <div class="model-info">
-                        <h3>Taycan Turbo</h3>
-                        <p>Sporty compact SUV: 4 doors, 5 seats.</p>
-                    </div>
-                    <a href="#" class="explore-btn">Explore &rarr;</a>
-                </div>
-            </div>
-
-            <div class="card" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
-                <div class="media-wrapper">
-                    <img src="Assets/Images/2020-porsche-taycan_100714962.jpg" class="card-img">
-                    <video src="Assets/Videos/WhatsApp Video 2026-04-25 at 8.19.00 AM.mp4" loop muted
-                        class="card-video"></video>
-                </div>
-                <div class="card-content">
-                    <div class="model-info">
-                        <h3>718</h3>
-                        <p>Versatile SUV: 4 doors, up to 5 seats.</p>
-                    </div>
-                    <a href="#" class="explore-btn">Explore &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-      <footer class="footer">
-
-            <div class="footer-top">
-
-                <!-- Logo -->
-                <div class="footer-col">
-                    <h2 class="footer-logo">FUÊRZÁ</h2>
-                    <p>Driven by performance, built for excellence.</p>
-                </div>
-
-                <!-- Links -->
-                <div class="footer-col">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="Index.html">Home</a></li>
-                        <li><a href="car_models.html">Car Models</a></li>
-                        <li><a href="download_catalogs.html">Download Catalog</a></li>
-                        <li><a href="compare_cars.html">Compare Cars</a></li>
-                    </ul>
-                </div>
-
-                <!-- Services -->
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="book_a_test_driver.html">Book Test Drive</a></li>
-                        <li><a href="find_a_dealer.html">Find Dealer</a></li>
-                        <li><a href="contact_us.html">Support</a></li>
-                        <li><a href="about_us.html">About Us</a></li>
-                        <li><a href="Login.html">Login</a></li>
-                    </ul>
-                </div>
-
-                <!-- Social -->
-                <div class="footer-col">
-                    <h3>Follow</h3>
-                    <div class="socials">
-                        <a href="#">f</a>
-                        <a href="#">ig</a>
-                        <a href="#">x</a>
-                        <a href="#">in</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="footer-line"></div>
-
-            <div class="footer-bottom">
-                <p>© 2026 FUÊRZÁ-GROUP. All rights reserved.</p>
-            </div>
-
-        </footer>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="car_models.css">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <title>Download Catalogs</title>
 
     <script>
-            let btn = document.getElementById("themeBtn");
-
-            // 1. تعريف ملف الصوت (تأكد من المسار الصحيح للملف)
-            let themeSound = new Audio("Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3");
-
-            // تحميل الثيم المحفوظ
+        (function () {
             if (localStorage.getItem("theme") === "dark") {
                 document.documentElement.classList.add("dark");
             }
+        });
+    </script>
 
-            // تحديث الأيقونة
-            function updateIcon() {
-                btn.textContent = document.documentElement.classList.contains("dark")
-                    ? "🌑"
-                    : "☀️";
+</head>
+
+<body>
+    <header>
+
+        <div id="menu-icon" class="menu-btn" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <pre>Menu</pre>
+        </div>
+
+        <div class="name"><img src="Assets/Images/FUERZA_logo-removebg-preview.png" alt="" class="logo"> FUÊRZÁ</div>
+
+        <button class="icon" id="themeBtn">☀️</button>
+        <audio id="theme-sound"
+            src="Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3"></audio>
+
+    </header>
+
+
+    <div id="sidebar" class="sidebar">
+        <ul class="sidebar-links">
+            <li><a href="index.html"><span>Home</span><span class="arrow">></span></a></li>
+            <li><a href="car_models.html"><span>Car Models</span><span class="arrow">></span></a></li>
+            <li><a href="download_catalogs.html"><span>Download Catalogs</span><span class="arrow">></span></a></li>
+            <li><a href="compare_cars.html"><span>Compare Cars</span><span class="arrow">></span></a></li>
+            <li><a href="book_a_test_driver.html"><span>Book A Test Driver</span><span class="arrow">></span></a></li>
+            <li><a href="find_a_dealer.html"><span>Find A Dealer</span><span class="arrow">></span></a></li>
+            <li><a href="contact_us.html"><span>Contact Us</span><span class="arrow">></span></a></li>
+            <li><a href="login.html"><span>Login</span><span class="arrow">></span></a></li>
+            <li><a href="about_us.html"><span>About Us</span><span class="arrow">></span></a></li>
+        </ul>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+    <section>
+
+        <div class="acar1">
+            <video autoplay muted loop poster="Assets/Images/911.jpeg" class="aback1">
+                <source src="Assets/Videos/WhatsApp Video 2026-04-27 at 4.24.47 AM.mp4" type="video/mp4">
+                your browser doesn't support HTML5 video.
+            </video>
+            <div class="avideo-overlay"></div>
+            <div class="acontent">
+                <div class="amodel">
+                    911.
+                </div>
+                <a href="" Download class="adiscover-btn"> Discover more</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="aporsche-journey">
+        <h2 class="amodel-title">Your Porsche journey starts now.</h2>
+
+        <div class="acards-container">
+            <div class="acard" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
+                <div class="amedia-wrapper">
+                    <img src="Assets/Images/911.jpeg" class="acard-img">
+                    <video src="Assets/Videos/911.mp4" loop muted class="acard-video"></video>
+                </div>
+                <div class="acard-content">
+                    <div class="amodel-info">
+                        <h3>911</h3>
+                        <p>Iconic sports car with rear engine.</p>
+                    </div>
+                    <a href="#" class="aexplore-btn">Explore &rarr;</a>
+                </div>
+            </div>
+
+            <div class="acard" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
+                <div class="amedia-wrapper">
+                    <img src="Assets/Images/911-turbo.jpeg" class="acard-img">
+                    <video src="Assets/Videos/911-turbo.mp4" loop muted class="acard-video"></video>
+                </div>
+                <div class="acard-content">
+                    <div class="amodel-info">
+                        <h3>911 Turbo</h3>
+                        <p>Precise mid-engine sports car.</p>
+                    </div>
+                    <a href="#" class="aexplore-btn">Explore &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="acards-container">
+            <div class="acard" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
+                <div class="amedia-wrapper">
+                    <img src="Assets/Images/panamera.jpeg" class="acard-img">
+                    <video src="Assets/Videos/panerma.mp4" loop muted class="acard-video"></video>
+                </div>
+                <div class="acard-content">
+                    <div class="amodel-info">
+                        <h3>Panamera</h3>
+                        <p>Electric sports car: 4 doors, 4/5 seats.</p>
+                    </div>
+                    <a href="#" class="aexplore-btn">Explore &rarr;</a>
+                </div>
+            </div>
+
+            <div class="acard" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
+                <div class="amedia-wrapper">
+                    <img src="Assets/Images/WhatsApp Image 2026-04-26 at 11.59.38 PM (3).jpeg" class="acard-img">
+                    <video src="Assets/Videos/taycan.mp4" loop muted class="acard-video"></video>
+                </div>
+                <div class="acard-content">
+                    <div class="amodel-info">
+                        <h3>Taycan 4s</h3>
+                        <p>Luxury sedan with a high level of comfort: 4 doors, 4/5</p>
+                    </div>
+                    <a href="#" class="aexplore-btn">Explore &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="acards-container">
+            <div class="acard" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
+                <div class="amedia-wrapper">
+                    <img src="Assets/Images/WhatsApp Image 2026-04-26 at 11.59.38 PM (4).jpeg" class="acard-img">
+                    <video src="Assets/Videos/taycan-turbo.mp4" loop muted class="acard-video"></video>
+                </div>
+                <div class="acard-content">
+                    <div class="amodel-info">
+                        <h3>Taycan Turbo</h3>
+                        <p>Sporty compact SUV: 4 doors, 5 seats.</p>
+                    </div>
+                    <a href="#" class="aexplore-btn">Explore &rarr;</a>
+                </div>
+            </div>
+
+            <div class="acard" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
+                <div class="amedia-wrapper">
+                    <img src="Assets/Images/2020-porsche-taycan_100714962.jpg" class="acard-img">
+                    <video src="Assets/Videos/WhatsApp Video 2026-04-25 at 8.19.00 AM.mp4" loop muted
+                        class="acard-video"></video>
+                </div>
+                <div class="acard-content">
+                    <div class="amodel-info">
+                        <h3>718</h3>
+                        <p>Versatile SUV: 4 doors, up to 5 seats.</p>
+                    </div>
+                    <a href="#" class="aexplore-btn">Explore &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-top">
+
+            <!-- Logo -->
+            <div class="footer-col">
+                <h2 class="footer-logo">FUÊRZÁ</h2>
+                <p>Driven by performance, built for excellence.</p>
+            </div>
+
+            <!-- Links -->
+            <div class="footer-col">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="car_models.html">Car Models</a></li>
+                    <li><a href="download_catalogs.html">Download Catalog</a></li>
+                    <li><a href="compare_cars.html">Compare Cars</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="book_a_test_driver.html">Book Test Drive</a></li>
+                    <li><a href="find_a_dealer.html">Find Dealer</a></li>
+                    <li><a href="contact_us.html">Support</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                </ul>
+            </div>
+
+            <!-- Social -->
+            <div class="footer-col">
+                <h3>Follow</h3>
+                <div class="socials">
+                    <a href="#">f</a>
+                    <a href="#">ig</a>
+                    <a href="#">x</a>
+                    <a href="#">in</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-line"></div>
+
+        <div class="footer-bottom">
+            <p>© 2026 FUÊRZÁ-GROUP. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+    <script>
+        let btn = document.getElementById("themeBtn");
+
+        // 1. تعريف ملف الصوت (تأكد من المسار الصحيح للملف)
+        let themeSound = new Audio("Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3");
+
+        // تحميل الثيم المحفوظ
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+
+        // تحديث الأيقونة
+        function updateIcon() {
+            btn.textContent = document.documentElement.classList.contains("dark")
+                ? "🌑"
+                : "☀️";
+        }
+
+        updateIcon();
+
+        // تغيير الثيم
+        btn.addEventListener("click", function () {
+            // 2. تشغيل الصوت عند كل ضغطة
+            themeSound.currentTime = 0; // بيرجع الصوت للبداية عشان يلحق يشتغل لو دوست ورا بعض
+            themeSound.play();
+
+            document.documentElement.classList.toggle("dark");
+
+            if (document.documentElement.classList.contains("dark")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
             }
 
             updateIcon();
-
-            // تغيير الثيم
-            btn.addEventListener("click", function () {
-                // 2. تشغيل الصوت عند كل ضغطة
-                themeSound.currentTime = 0; // بيرجع الصوت للبداية عشان يلحق يشتغل لو دوست ورا بعض
-                themeSound.play();
-
-                document.documentElement.classList.toggle("dark");
-
-                if (document.documentElement.classList.contains("dark")) {
-                    localStorage.setItem("theme", "dark");
-                } else {
-                    localStorage.setItem("theme", "light");
-                }
-
-                updateIcon();
-            });
-        </script>
+        });
+    </script>
 
 </body>
 

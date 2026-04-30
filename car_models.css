@@ -9,7 +9,7 @@
 /* themes */
 :root {
     --bg-color: #828891;
-    --text-color: #000;
+    --text-color: #fff;
     --card-overlay: rgba(0,0,0,0.5);
     --sidebar-bg: #b1b7bee3;
     --sidebar-text: #000;
@@ -41,7 +41,7 @@
     --input-bg: rgb(255, 255, 255);
     --btn-border: #ff0000d4;
     --btn-text: #ff0000d4;
-    --model-color: black;
+    --model-color: white;
     --card-container-color: #b0afaff1;
     --card-color: #1c1c1c;
     --card-content-color: white;
@@ -60,6 +60,7 @@ body {
 
 /* ================= HEADER ================= */
 header {
+    /* position: absolute;hhh */
     top: 0;
     left: 0;
     width: 100%;
@@ -357,7 +358,7 @@ header {
 
 }
 
-.car1 {
+.acar1 {
     width: 100%;
     height: 100vh;
     position: relative;
@@ -369,7 +370,7 @@ header {
 }
 
 /* الطبقة اللي بتعمل التأثير */
-.video-overlay {
+.avideo-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -390,7 +391,7 @@ header {
     /* عشان ميعطلش أي ضغطة على الفيديو */
 }
 
-.back1 {
+.aback1 {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -400,14 +401,14 @@ header {
     object-fit: cover;
 }
 
-.content {
+.acontent {
     position: absolute;
     bottom: 15%;
     left: 8%;
     z-index: 5;
 }
 
-.model {
+.amodel {
     font-size: 85px;
     font-weight: 500;
     margin-bottom: 20px;
@@ -417,7 +418,7 @@ header {
     z-index: 5;
 }
 
-.discover-btn {
+.adiscover-btn {
     display: inline-block;
     padding: 12px 35px;
     border: 2px solid white;
@@ -429,7 +430,7 @@ header {
     background: transparent;
 }
 
-.discover-btn:hover {
+.adiscover-btn:hover {
     background: rgba(255, 255, 255, .2);
     color: white;
     backdrop-filter: blur(8px);
@@ -437,7 +438,7 @@ header {
 
 }
 
-.model-title {
+.amodel-title {
     color: var(--model-color);
     font-family: 'Michroma', sans-serif;
     padding: 50px 0;
@@ -445,7 +446,7 @@ header {
     margin-left: 5%;
 }
 
-.cards-container {
+.acards-container {
     display: flex;
     justify-content: space-between;
     gap: 30px;
@@ -454,7 +455,7 @@ header {
     /* متناسق مع خلفية الـ body */
 }
 
-.card {
+.acard {
     flex: 1;
     position: relative;
     overflow: hidden;
@@ -465,20 +466,20 @@ header {
     /* تكبير الكارد */
 }
 
-.card:hover {
+.acard:hover {
     transform: scale(1.03);
     /* الكارد بتكبر لما تقف عليها */
 }
 
 /* تداخل الصورة والفيديو */
-.media-wrapper {
+.amedia-wrapper {
     position: relative;
     width: 100%;
     height: 450px;
 }
 
-.card-img,
-.card-video {
+.acard-img,
+.acard-video {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -486,24 +487,24 @@ header {
     transition: opacity 0.5s ease;
 }
 
-.card-video {
+.acard-video {
     opacity: 0;
     /* الفيديو مخفي في البداية */
 }
 
-.card:hover .card-video {
+.acard:hover .acard-video {
     opacity: 1;
     /* الفيديو يظهر بدل الصورة */
 }
 
 /* زرار الإكسبلور والكلام */
-.card-content {
+.acard-content {
     padding: 20px;
     color: var(--card-content-color);
     font-family: 'Michroma', sans-serif;
 }
 
-.explore-btn {
+.aexplore-btn {
     display: inline-block;
     margin-top: 20px;
     padding: 8px 20px;
@@ -520,7 +521,7 @@ header {
 }
 
 /* تأثير الهوفر اللي حوالين الزرار */
-.explore-btn:hover {
+.aexplore-btn:hover {
     background-color: var(--explore-hover-bg);
     /* الزرار نفسه يبيض */
     color: var(--explore-hover-cn);
@@ -532,7 +533,7 @@ header {
     /* رفعة بسيطة لفوق */
 }
 
-.card:hover .explore-btn {
+.acard:hover .aexplore-btn {
     opacity: 1;
     /* الزرار بيبان لما تقف على الكارد */
     transform: translateY(0);
