@@ -1,10 +1,290 @@
 <html lang="en">
+    <script defer>
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('overlay');
+                const menuIcon = document.getElementById('menu-icon');
+
+                // تبديل الكلاسات
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('show');
+                menuIcon.classList.toggle('open');
+            }
+        </script>
+
     <head>
-        <meta charset="UTF_8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
+        <link rel="stylesheet" href="ahmed_anas_adham.css">
+        <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+        <title>Book A Test Driver</title>
+
+        <script>
+            (function () {
+                if (localStorage.getItem("theme") === "dark") {
+                    document.documentElement.classList.add("dark");
+                }
+            });
+        </script>
+
     </head>
-    <body>
+
+    <body class="Passant">
+        <header>
+
+            <div id="menu-icon" class="menu-btn" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <pre>Menu</pre>
+            </div>
+
+            <div class="name"><img src="Assets/Images/FUERZA_logo-removebg-preview.png" alt="" class="logo"> FUÊRZÁ</div>
+
+            <button class="icon" id="themeBtn">☀️</button>
+            <audio id="theme-sound"
+                src="Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3"></audio>
+
+        </header>
+
+
+        <div id="sidebar" class="sidebar">
+            <ul class="sidebar-links">
+                <li><a href="index.html"><span>Home</span><span class="arrow">></span></a></li>
+                <li><a href="car_models.html"><span>Car Models</span><span class="arrow">></span></a></li>
+                <li><a href="download_catalogs.html"><span>Download Catalogs</span><span class="arrow">></span></a></li>
+                <li><a href="compare_cars.html"><span>Compare Cars</span><span class="arrow">></span></a></li>
+                <li><a href="book_a_test_driver.html"><span>Book A Test Driver</span><span class="arrow">></span></a></li>
+                <li><a href="find_a_dealer.html"><span>Find A Dealer</span><span class="arrow">></span></a></li>
+                <li><a href="contact_us.html"><span>Contact Us</span><span class="arrow">></span></a></li>
+                <li><a href="login.html"><span>Login</span><span class="arrow">></span></a></li>
+                <li><a href="about_us.html"><span>About Us</span><span class="arrow">></span></a></li>
+            </ul>
+        </div>
+
+        <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+        <section>
+            <div class="form">
+
+            <form  onsubmit="return validateForm(event)">
+
+                <label>Name:</label>
+                <input type="text" id="name" placeholder=" enter your name">
+                <error id="nameMsg"></error>
+
+                <label>Phone Number:</label>
+                <input type="text" id="phone" placeholder="enter your phone number">
+                <error id="phoneMsg"></error>
+
+                 <label>Car Model:</label>
+                 <select id="model" placeholder="select model">
+                    <option value=""> Select Model </option>
+                    <option value="911">911</option>
+                    <option value="911 Turbo">911 Turbo</option>
+                    <option value="718">718</option>
+                    <option value="Taycan Turbo">Taycan Turbo</option>
+                    <option value="Taycan Turbo">Taycan Turbo</option>
+                    <option value="Panamera">Panamera</option>
+                </select>
+                <error id="modelMsg"></error>
+
+                <label>Date:</label>
+                <input type="date" id="date">
+                <error id="dateMsg"></error>
+
+                <button type="submit" class="book-btn">Submit</button>
+
+    </form>
+    <p id="formMsg"></p>
+
+</div>
+
+
+
+
+            <!-- شغلك هيبقى هنا يارب ما تبوظى حاجه فى السيكشن -->
+        </section>
+
+        <footer class="footer">
+
+            <div class="footer-top">
+
+                <!-- Logo -->
+                <div class="footer-col">
+                    <h2 class="footer-logo">FUÊRZÁ</h2>
+                    <p>Driven by performance, built for excellence.</p>
+                </div>
+
+                <!-- Links -->
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="Index.html">Home</a></li>
+                        <li><a href="car_models.html">Car Models</a></li>
+                        <li><a href="download_catalogs.html">Download Catalog</a></li>
+                        <li><a href="compare_cars.html">Compare Cars</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="book_a_test_driver.html">Book Test Drive</a></li>
+                        <li><a href="find_a_dealer.html">Find Dealer</a></li>
+                        <li><a href="contact_us.html">Support</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="Login.html">Login</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-col">
+                    <h3>Follow</h3>
+                    <div class="socials">
+                        <a href="#">f</a>
+                        <a href="#">ig</a>
+                        <a href="#">x</a>
+                        <a href="#">in</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-line"></div>
+
+            <div class="footer-bottom">
+                <p>© 2026 FUÊRZÁ-GROUP. All rights reserved.</p>
+            </div>
+
+        </footer>
+
+        <script>
+            let btn = document.getElementById("themeBtn");
+
+            // 1. تعريف ملف الصوت (تأكد من المسار الصحيح للملف)
+            let themeSound = new Audio("Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3");
+
+            // تحميل الثيم المحفوظ
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.classList.add("dark");
+            }
+
+            // تحديث الأيقونة
+            function updateIcon() {
+                btn.textContent = document.documentElement.classList.contains("dark")
+                    ? "🌑"
+                    : "☀️";
+            }
+
+            updateIcon();
+
+            // تغيير الثيم
+            btn.addEventListener("click", function () {
+                // 2. تشغيل الصوت عند كل ضغطة
+                themeSound.currentTime = 0; // بيرجع الصوت للبداية عشان يلحق يشتغل لو دوست ورا بعض
+                themeSound.play();
+
+                document.documentElement.classList.toggle("dark");
+
+                if (document.documentElement.classList.contains("dark")) {
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    localStorage.setItem("theme", "light");
+                }
+
+                updateIcon();
+            });
+        </script>
+
+        <script>
+            // passant java//
+            
+                function validateForm(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+
+    const phone = document.getElementById("phone").value.trim();
+
+    const model = document.getElementById("model").value;
+
+    const date = document.getElementById("date").value;
+
+    // عناصر الرسائل
+
+    const nameMsg = document.getElementById("nameMsg");
+
+    const phoneMsg = document.getElementById("phoneMsg");
+
+    const modelMsg = document.getElementById("modelMsg");
+
+    const dateMsg = document.getElementById("dateMsg");
+
+    // reset
+
+    nameMsg.textContent = "";
+
+    phoneMsg.textContent = "";
+
+    modelMsg.textContent = "";
+
+    dateMsg.textContent = "";
+
+    let valid = true;
+
+    // Name
+
+    if (name === "") {
+
+        nameMsg.textContent = "Enter your name";
+
+        valid = false;
+
+    }
+
+    // Phone
+
+    if (phone.length !== 11) {
+
+        phoneMsg.textContent = "Phone must be 11 digits";
+
+        valid = false;
+
+    }
+
+    // Model
+
+    if (model === "") {
+
+        modelMsg.textContent = "Select a car model";
+
+        valid = false;
+
+    }
+
+    // Date
+
+    if (date === "") {
+
+        dateMsg.textContent = "Select a date";
+
+        valid = false;
+
+    }
+
+    if (valid) {
+
+        alert("Form submitted successfully!");
+
+    }
+
+    return valid;
+
+}
+    </script>
 
     </body>
+
 </html>

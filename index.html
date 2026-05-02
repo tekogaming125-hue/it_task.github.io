@@ -1,7 +1,5 @@
-<!DOCTYPE html>
 <html lang="en">
-
-<script defer>
+        <script defer>
             function toggleSidebar() {
                 const sidebar = document.getElementById('sidebar');
                 const overlay = document.getElementById('overlay');
@@ -18,9 +16,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="ahmed_anas_adham.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-        <title>Find A Dealer</title>
+        <title>Home</title>
 
         <script>
             (function () {
@@ -67,35 +64,85 @@
 
         <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
-    <section class="map-section">
-        <div class="search-box">
-            <input type="text" placeholder="Search for FUÊRZÁ partners...">
+<div class="video-background">
+    <iframe src="video.html" frameborder="0" style="width:100%; height:100vh;">
+
+    </iframe>
+
+
+<div class="hero-buttons">
+    <a href="car_models.html" class="car-btn">MODELS</a>
+    <a href="about_us.html" class="car-btn">ABOUT US</a>
+</div>
+
+
+</div>
+</div>
+
+
+
+<section class="about-products">
+
+    <div class="models-header">
+        <div class="line"></div>
+        <h2>OUR COLLECTION</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="about-text">
+        <p>
+            Discover our exclusive selection of luxury and performance cars.
+            Every model is designed to deliver power, elegance, and innovation.
+        </p>
+    </div>
+
+</section>
+
+    <div class="cars-grid">
+        <div class="car-item">
+            <img src="./Assets/Images/car911.png" alt="Car 1">
+            <div class="car-name">PORSCHE 911</div>
+            <a href="./car_models.html" class="explore-btn">EXPLORE</a>
         </div>
-    </section>
 
-    <div id="map"></div>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <div class="car-item">
+            <img src="./Assets/Images/car911turpo.png" alt="Car 2">
+            <div class="car-name">Porche 911 TURBO </div>
+            <a href="./car_models.html" class="explore-btn">EXPLORE</a>
+        </div>
+    </div>
+</section>
 
-    <script>
-        // التأكد من تحميل الصفحة أولاً
-        document.addEventListener('DOMContentLoaded', function () {
-            // إنشاء الخريطة
-            var map = L.map('map').setView([48.8566, 12.3522], 4);
+    <section class="features-section">
 
-            // إضافة شكل الخريطة (قشرة الخريطة)
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+    <div class="features-header">
+        <span class="line"></span>
+        <h2>OUR FEATURES</h2>
+        <span class="line"></span>
+    </div>
 
-            // إضافة نقطة تجريبية (لندن مثلاً)
-            const customIcon = L.divIcon({
-                className: 'custom-label',
-                html: 'London',
-                iconSize: [80, 25]
-            });
-            L.marker([51.5074, -0.1278], { icon: customIcon }).addTo(map);
-        });
-    </script>
+    <div class="about-cards">
+        <div class="about-card">
+            <h3>Performance</h3>
+            <p>Built for speed, control, and an adrenaline-driven experience.</p>
+        </div>
 
-<footer class="footer">
+        <div class="about-card">
+            <h3>Precision</h3>
+            <p>Every detail is engineered for maximum accuracy and driving perfection.</p>
+        </div>
+
+        <div class="about-card">
+            <h3>Innovation</h3>
+            <p>Cutting-edge technology that pushes boundaries beyond expectations.</p>
+        </div>
+    </div>
+
+</section>
+
+
+
+  <footer class="footer">
 
             <div class="footer-top">
 
@@ -186,6 +233,6 @@
                 updateIcon();
             });
         </script>
-</body>
 
+    </body>
 </html>

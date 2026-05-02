@@ -1,10 +1,253 @@
 <html lang="en">
+
+        <script defer>
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('overlay');
+                const menuIcon = document.getElementById('menu-icon');
+
+                // تبديل الكلاسات
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('show');
+                menuIcon.classList.toggle('open');
+            }
+        </script>
+
     <head>
-        <meta charset="UTF_8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
+        <link rel="stylesheet" href="ahmed_anas_adham.css">
+        <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+        <title> Login </title>
+
+        <script>
+            (function () {
+                if (localStorage.getItem("theme") === "dark") {
+                    document.documentElement.classList.add("dark");
+                }
+            });
+        </script>
+
     </head>
+
     <body>
+        <header>
+
+            <div id="menu-icon" class="menu-btn" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <pre>Menu</pre>
+            </div>
+
+            <div class="name"><img src="Assets/Images/FUERZA_logo-removebg-preview.png" alt="" class="logo"> FUÊRZÁ</div>
+
+            <button class="icon" id="themeBtn">☀️</button>
+            <audio id="theme-sound"
+                src="Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3"></audio>
+
+        </header>
+
+
+        <div id="sidebar" class="sidebar">
+            <ul class="sidebar-links">
+                <li><a href="index.html"><span>Home</span><span class="arrow">></span></a></li>
+                <li><a href="car_models.html"><span>Car Models</span><span class="arrow">></span></a></li>
+                <li><a href="download_catalogs.html"><span>Download Catalogs</span><span class="arrow">></span></a></li>
+                <li><a href="compare_cars.html"><span>Compare Cars</span><span class="arrow">></span></a></li>
+                <li><a href="book_a_test_driver.html"><span>Book A Test Driver</span><span class="arrow">></span></a></li>
+                <li><a href="find_a_dealer.html"><span>Find A Dealer</span><span class="arrow">></span></a></li>
+                <li><a href="contact_us.html"><span>Contact Us</span><span class="arrow">></span></a></li>
+                <li><a href="login.html"><span>Login</span><span class="arrow">></span></a></li>
+                <li><a href="about_us.html"><span>About Us</span><span class="arrow">></span></a></li>
+            </ul>
+        </div>
+
+        <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+        <section class="login-container">
+            <form class="login-form" id="registrationForm">
+                <h2>Login</h2>
+        
+                <div class="input-group">
+                    <input type="text" id="fullName" placeholder="Full Name">
+                    <span class="error-msg" id="nameError"></span>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email Address">
+                    <span class="error-msg" id="emailError"></span>
+                </div>
+
+                <div class="input-group">
+                    <input type="tel" id="phone" placeholder="Phone Number">
+                    <span class="error-msg" id="phoneError"></span>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password">
+                    <span class="error-msg" id="passError"></span>
+                </div>
+
+                <button type="submit" class="login-btn">ENTER THE CREW</button>
+                
+                <div class="form-footer">
+                    <a href="#">Forgot Password?</a>
+                    <span>|</span>
+                    <a href="#">Join us</a>
+                </div>
+            </form>
+        </section>
+
+        <footer class="footer">
+
+            <div class="footer-top">
+
+                <!-- Logo -->
+                <div class="footer-col">
+                    <h2 class="footer-logo">FUÊRZÁ</h2>
+                    <p>Driven by performance, built for excellence.</p>
+                </div>
+
+                <!-- Links -->
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="Index.html">Home</a></li>
+                        <li><a href="car_models.html">Car Models</a></li>
+                        <li><a href="download_catalogs.html">Download Catalog</a></li>
+                        <li><a href="compare_cars.html">Compare Cars</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="book_a_test_driver.html">Book Test Drive</a></li>
+                        <li><a href="find_a_dealer.html">Find Dealer</a></li>
+                        <li><a href="contact_us.html">Support</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="Login.html">Login</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-col">
+                    <h3>Follow</h3>
+                    <div class="socials">
+                        <a href="#">f</a>
+                        <a href="#">ig</a>
+                        <a href="#">x</a>
+                        <a href="#">in</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-line"></div>
+
+            <div class="footer-bottom">
+                <p>© 2026 FUÊRZÁ-GROUP. All rights reserved.</p>
+            </div>
+
+        </footer>
+
+
+        <script>
+            let btn = document.getElementById("themeBtn");
+
+            // 1. تعريف ملف الصوت (تأكد من المسار الصحيح للملف)
+            let themeSound = new Audio("Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3");
+
+            // تحميل الثيم المحفوظ
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.classList.add("dark");
+            }
+
+            // تحديث الأيقونة
+            function updateIcon() {
+                btn.textContent = document.documentElement.classList.contains("dark")
+                    ? "🌑"
+                    : "☀️";
+            }
+
+            updateIcon();
+
+            // تغيير الثيم
+            btn.addEventListener("click", function () {
+                // 2. تشغيل الصوت عند كل ضغطة
+                themeSound.currentTime = 0; // بيرجع الصوت للبداية عشان يلحق يشتغل لو دوست ورا بعض
+                themeSound.play();
+
+                document.documentElement.classList.toggle("dark");
+
+                if (document.documentElement.classList.contains("dark")) {
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    localStorage.setItem("theme", "light");
+                }
+
+                updateIcon();
+            });
+        </script>
+
+
+
+        <!--script for Validation-->
+
+        <script>
+
+            document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form from refreshing
+
+            // Get values
+            const name = document.getElementById('fullName');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const password = document.getElementById('password');
+
+            let isValid = true;
+
+            // Helper function to show errors
+            const showError = (input, errorId, message) => {
+                document.getElementById(errorId).innerText = message;
+                input.classList.add('invalid');
+                isValid = false;
+            };
+
+            // Reset errors
+            document.querySelectorAll('.error-msg').forEach(msg => msg.innerText = '');
+            document.querySelectorAll('input').forEach(input => input.classList.remove('invalid'));
+
+            // 1. Name Validation
+            if (name.value.trim().length < 3) {
+                showError(name, 'nameError', 'Please enter your full name');
+            }
+
+            // 2. Email Validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                showError(email, 'emailError', 'Enter a valid email address');
+            }
+
+            // 3. Phone Validation (Simple check for numbers and length)
+            if (phone.value.length < 10) {
+                showError(phone, 'phoneError', 'Enter a valid phone number');
+            }
+
+            // 4. Password Validation
+            if (password.value.length < 6) {
+                showError(password, 'passError', 'Password must be at least 6 characters');
+            }
+
+            // If everything is valid
+            if (isValid) {
+                alert('Welcome to the Crew!');
+                // Here you can add your actual form submission code
+            }
+            });
+
+        </script>
 
     </body>
-</html>
+    </html>

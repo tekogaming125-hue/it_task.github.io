@@ -1,13 +1,5 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF_8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="compare_cars.css">
-        <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-        <title>Compare Cars</title>
-    </head>
-
-      <script>
+    <script defer>
             function toggleSidebar() {
                 const sidebar = document.getElementById('sidebar');
                 const overlay = document.getElementById('overlay');
@@ -20,24 +12,42 @@
             }
         </script>
 
-      
-    <body>
-        <!-- HEADER -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="ahmed_anas_adham.css">
+        <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+        <title>Compare Cars</title>
+
+        <script>
+            (function () {
+                if (localStorage.getItem("theme") === "dark") {
+                    document.documentElement.classList.add("dark");
+                }
+            });
+        </script>
+
+    </head>
+
+    <body class="Osama">
         <header>
 
             <div id="menu-icon" class="menu-btn" onclick="toggleSidebar()">
                 <span></span>
                 <span></span>
                 <span></span>
+                <pre>Menu</pre>
             </div>
 
-            <div class="name"><img src="Assets\Images\FUERZA_logo-removebg-preview.png" alt="" class="logo"> FUÊRZÁ</div>
+            <div class="name"><img src="Assets/Images/FUERZA_logo-removebg-preview.png" alt="" class="logo"> FUÊRZÁ</div>
 
-            <div class="icon">🌐</div>
+            <button class="icon" id="themeBtn">☀️</button>
+            <audio id="theme-sound"
+                src="Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3"></audio>
 
         </header>
 
-        
+
         <div id="sidebar" class="sidebar">
             <ul class="sidebar-links">
                 <li><a href="index.html"><span>Home</span><span class="arrow">></span></a></li>
@@ -51,10 +61,10 @@
                 <li><a href="about_us.html"><span>About Us</span><span class="arrow">></span></a></li>
             </ul>
         </div>
-        
+
         <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
         <section>
-         <table>
+            <table>
 
         
 
@@ -130,7 +140,7 @@
                 </tbody>
         </table>
     </section>
-               <footer class="footer">
+      <footer class="footer">
 
             <div class="footer-top">
 
@@ -150,7 +160,7 @@
                         <li><a href="compare_cars.html">Compare Cars</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Services -->
                 <div class="footer-col">
                     <h3>Services</h3>
@@ -159,6 +169,7 @@
                         <li><a href="find_a_dealer.html">Find Dealer</a></li>
                         <li><a href="contact_us.html">Support</a></li>
                         <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="Login.html">Login</a></li>
                     </ul>
                 </div>
 
@@ -182,6 +193,45 @@
             </div>
 
         </footer>
+
+        <script>
+            let btn = document.getElementById("themeBtn");
+
+            // 1. تعريف ملف الصوت (تأكد من المسار الصحيح للملف)
+            let themeSound = new Audio("Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3");
+
+            // تحميل الثيم المحفوظ
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.classList.add("dark");
+            }
+
+            // تحديث الأيقونة
+            function updateIcon() {
+                btn.textContent = document.documentElement.classList.contains("dark")
+                    ? "🌑"
+                    : "☀️";
+            }
+
+            updateIcon();
+
+            // تغيير الثيم
+            btn.addEventListener("click", function () {
+                // 2. تشغيل الصوت عند كل ضغطة
+                themeSound.currentTime = 0; // بيرجع الصوت للبداية عشان يلحق يشتغل لو دوست ورا بعض
+                themeSound.play();
+
+                document.documentElement.classList.toggle("dark");
+
+                if (document.documentElement.classList.contains("dark")) {
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    localStorage.setItem("theme", "light");
+                }
+
+                updateIcon();
+            });
+        </script>
+
 
     </body>
 </html>
