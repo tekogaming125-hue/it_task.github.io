@@ -1219,8 +1219,13 @@ input:focus, select:focus {
 
 }
 
-error{ 
+
+
+.error-msg{ 
     color: red;
     display: block;
-    margin-top: 5px;
+    margin-top: 1px;
+   
+    
+    
 }
