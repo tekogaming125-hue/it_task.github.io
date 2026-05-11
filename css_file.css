@@ -101,11 +101,6 @@ header {
     font-size: 22px;
     cursor: pointer;
     padding: 5px;
-    /* color: inherit; */
-}
-
-.icon:hover {
-    background-color: transparent;
 }
 
 .name {
@@ -138,26 +133,25 @@ header {
     height: 1.8px;
     background-color: var(--text-color);
     margin: 5px 2px;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .menu-btn.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-    background-color: #b1b7be00;
+    opacity: 0;
 }
 
 .menu-btn.open span:nth-child(2) {
     opacity: 0;
-    background-color: #b1b7be00;
 }
 
 .menu-btn.open span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
-    background-color: #b1b7be00;
+    opacity: 0;
 }
 
 .menu-btn.open pre {
-    color: #b1b7be00;
+    opacity: 0;
 }
 
 
@@ -195,7 +189,7 @@ header {
     border-bottom: solid 2px #ffffff82;
     font-family: 'Michroma', sans-serif;
     font-size: 18px;
-    transition: 0.1s ease;
+    transition: 0.1s;
 }
 
 .sidebar-links li a:hover {
@@ -434,7 +428,6 @@ header {
     margin: auto;
     border-radius: 50px;
     overflow: hidden;
-    background: #ffffff00;
 }
 
 /* الصور */

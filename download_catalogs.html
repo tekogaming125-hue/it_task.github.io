@@ -1,16 +1,4 @@
 <html lang="en">
-        <script defer>
-            function toggleSidebar() {
-                const sidebar = document.getElementById('sidebar');
-                const overlay = document.getElementById('overlay');
-                const menuIcon = document.getElementById('menu-icon');
-
-                // تبديل الكلاسات
-                sidebar.classList.toggle('active');
-                overlay.classList.toggle('show');
-                menuIcon.classList.toggle('open');
-            }
-        </script>
 
     <head>
         <meta charset="UTF-8">
@@ -19,13 +7,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
         <title>Download Catalogs</title>
 
-        <script>
-            (function () {
-                if (localStorage.getItem("theme") === "dark") {
-                    document.documentElement.classList.add("dark");
-                }
-            });
-        </script>
 
     </head>
 
@@ -310,6 +291,26 @@
 
         </footer>
 
+        <script defer>
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('overlay');
+                const menuIcon = document.getElementById('menu-icon');
+
+                // تبديل الكلاسات
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('show');
+                menuIcon.classList.toggle('open');
+            }
+        </script>
+        
+        <script>
+            (function () {
+                if (localStorage.getItem("theme") === "dark") {
+                    document.documentElement.classList.add("dark");
+                }
+            });
+        </script>
         <script>
             let btn = document.getElementById("themeBtn");
 
